@@ -888,7 +888,7 @@ const createExperiencePlan = (fd) => {
 
 const createResortSelect = (fd) => {
   const fieldWrapper = createFieldWrapper(fd);
-  fieldWrapper.classList.add('locationInterestDiv');
+  fieldWrapper.classList.add('location-interest-div');
 
   if (fd.Label) {
     const label = createLabel(fd);

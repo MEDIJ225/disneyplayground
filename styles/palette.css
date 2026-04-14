@@ -19,7 +19,6 @@
   --dark-blue: #173662;
   --button-primary: #1E355E;
   --button-secondary: #00233C;
-
   --button-primary-hover: #3E66AE;
   --button-primary-active: #212A46;
   --button-primary-disabled: #607682;
@@ -28,17 +27,13 @@
   --primary-background: #132c4f;
   --secondary-background: #6f3138;
   --tertiary-background: #85853e;
-
   --button-bgcolor: #1D3A64;
   --footer-btn-background: #069ED7;
   --header-hover-color:#1E355E;
-
   --tab-background-color: #e6eef2;
   --tab-icon-active-background : #0C76AF;
   --tab-tracker-color: #EDF0F7;
-
   --cta-text-color: #222;
-
   --primary-gradient: linear-gradient(
     90deg,
       rgb(37 65 107 / 83%) 0%,
@@ -56,7 +51,6 @@
       rgba(193 193 111/ 65%) 40%,
     rgba(193 193 111/ 65%) 65%
   );
-
   --bgcolor-primary: #C13E34;
   --bgcolor-navy: #1E355E;
   --bgcolor-sky-blue: #3B5BE7;

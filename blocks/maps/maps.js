@@ -191,7 +191,7 @@ export default async function decorate(block) {
   initializeMap(mapConfig);
   if (mapConfig.isPromoUnit) {
     const magnifyingGlass = document.createElement('div');
-    magnifyingGlass.setAttribute('class', 'mapZoomIcon');
+    magnifyingGlass.setAttribute('class', 'map-zoom-icon');
     map.controls[window.google.maps.ControlPosition.TOP_RIGHT].push(magnifyingGlass);
   }
   await setMarkers(rawTags);

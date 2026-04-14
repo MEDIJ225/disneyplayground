@@ -10,7 +10,7 @@
  * governing permissions and limitations under the License.
  */
 /* global WebImporter */
-/* eslint-disable no-console, class-methods-use-this */
+/* eslint-disable no-console, class-methods-use-this, no-unused-vars */
 
 const handleStoryCards = (main) => {
   // standard cards - with icons or image
@@ -30,7 +30,12 @@ const handleStoryCards = (main) => {
             const icon = card.querySelector('.headerIcon');
             const img = card.querySelector('img');
             const link = card.querySelector('a');
-            const leftCol = icon ? icon.outerHTML : (img ? img.outerHTML : '');
+            let leftCol = '';
+            if (icon) {
+              leftCol = icon.outerHTML;
+            } else if (img) {
+              leftCol = img.outerHTML;
+            }
 
             const isClickableCardsBlock = link && link.textContent === link.href;
 
@@ -38,7 +43,7 @@ const handleStoryCards = (main) => {
               panelBody.innerHTML += link.outerHTML;
             }
 
-            panelBody.querySelectorAll('.headerIcon, img').forEach(el => el.remove());
+            panelBody.querySelectorAll('.headerIcon, img').forEach((el) => el.remove());
             cells.push([leftCol, panelBody.innerHTML]);
           }
         });
@@ -59,7 +64,6 @@ const handleStoryCards = (main) => {
         });
         cardSection.replaceWith(columnsBlock);
       }
-
     }
   });
 
@@ -75,18 +79,25 @@ const handleStoryCards = (main) => {
     [...storyCardsSections].forEach((storyCardsSection) => {
       const wrapper = storyCardsSection.closest('.storyCardWrapper');
       const cardBlockClasses = ['square-card', 'normal-card', 'two-column-card'];
-      const isCardsBlock = wrapper && cardBlockClasses.some(cls => wrapper.classList.contains(cls));
-      const isColumnsBlock = wrapper && (wrapper.classList.contains('stamp-cards') || wrapper.querySelector('.media.full-width.single') || storyCardsSection.querySelector('.event-card.single') || storyCardsSection.querySelector('.full-alternate.single') || wrapper.classList.contains('single') && !storyCardsSection.querySelector('.event-card'));
+      const isCardsBlock = wrapper
+        && cardBlockClasses.some((cls) => wrapper.classList.contains(cls));
+      const isColumnsBlock = wrapper && (
+        wrapper.classList.contains('stamp-cards')
+        || wrapper.querySelector('.media.full-width.single')
+        || storyCardsSection.querySelector('.event-card.single')
+        || storyCardsSection.querySelector('.full-alternate.single')
+        || (wrapper.classList.contains('single')
+          && !storyCardsSection.querySelector('.event-card'))
+      );
       const isEventDetailBlock = storyCardsSection.querySelector('.event-card');
       const isIconListBlock = wrapper && (wrapper.classList.contains('storyCardBadge'));
       const isCalloutBlock = (storyCardsSection.querySelector('.storyCardIcon') && !wrapper.classList.contains('storyCardBadge')) || storyCardsSection.querySelector('as-story-card-training-item');
 
       const checklist = storyCardsSection.querySelectorAll('.check-list');
 
-
       if (checklist.length > 0) {
-        checklist.forEach((checklist) => {
-          checklist.querySelectorAll('.pepicon').forEach((icon) => {
+        checklist.forEach((item) => {
+          item.querySelectorAll('.pepicon').forEach((icon) => {
             icon.remove();
           });
         });
@@ -96,7 +107,7 @@ const handleStoryCards = (main) => {
         const cards = storyCardsSection.querySelectorAll(':scope > li');
         const eventCards = [];
         const otherCards = [];
-        
+
         // Separate event cards from other cards
         [...cards].forEach((card) => {
           if (card.querySelector('.event-card')) {
@@ -135,7 +146,7 @@ const handleStoryCards = (main) => {
             cells,
           });
           eventDetailBlocks.push(eventDetailBlock);
-          
+
           // Add HR after event detail block
           const hr = document.createElement('hr');
           eventDetailBlocks.push(hr);
@@ -237,7 +248,7 @@ const handleStoryCards = (main) => {
         }
       } else if (isColumnsBlock) {
         const hasIcon = !storyCardsSection.querySelector('.full-alternate.single') && storyCardsSection.querySelector('.titleRow .pepicon');
-        let blockName = hasIcon ? 'Columns (Icon Separator)' : 'Columns (border)';
+        const blockName = hasIcon ? 'Columns (Icon Separator)' : 'Columns (border)';
 
         const hasBlueBackground = storyCardsSection.querySelector('.media-body[ng-style*="backgroundColor"]');
         // if (hasBlueBackground) {
@@ -289,13 +300,13 @@ const handleStoryCards = (main) => {
                   leftCol = leftCol.replace(/<div[^>]*class="iconContainer"[^>]*>[\s\S]*?<\/div>/g, '');
                   leftCol = leftCol.replace(
                     /<div[^>]*class="title"[^>]*>([\s\S]*?)<\/div>/,
-                    `<div class="title" role="heading" aria-level="3">${iconHTML}&nbsp;$1</div>`
+                    `<div class="title" role="heading" aria-level="3">${iconHTML}&nbsp;$1</div>`,
                   );
                 } else if (rightCol && rightCol.includes('class="title"')) {
                   rightCol = rightCol.replace(/<div[^>]*class="iconContainer"[^>]*>[\s\S]*?<\/div>/g, '');
                   rightCol = rightCol.replace(
                     /<div[^>]*class="title"[^>]*>([\s\S]*?)<\/div>/,
-                    `<div class="title" role="heading" aria-level="3">${iconHTML}&nbsp;$1</div>`
+                    `<div class="title" role="heading" aria-level="3">${iconHTML}&nbsp;$1</div>`,
                   );
                 }
               }
@@ -348,7 +359,6 @@ const handleStoryCards = (main) => {
             let rightCol = mediaBody ? mediaBody.outerHTML : '';
 
             if (downloadLink) {
-
               rightCol += downloadLink.outerHTML;
             }
 
@@ -488,11 +498,11 @@ const handleBlogPosts = (main, metadata) => {
   const authorName = author.replace('by ', '');
   const date = main.querySelector('.article-date-post').textContent;
   const categories = [...main.querySelectorAll('.article-category')]
-    .map((a) => a.textContent.trim().replace(/\s*,\s*$/, ''))
+    .map((a) => a.textContent.trim().replace(/\s*,\s*$/, ''));
 
-  metadata['Author'] = `authors/${authorName}`;
-  metadata['Date'] = date;
-  metadata['Tags'] = categories
+  metadata.Author = `authors/${authorName}`;
+  metadata.Date = date;
+  metadata.Tags = categories
     .map((cat) => {
       const kebab = cat
         .toLowerCase()
@@ -501,7 +511,7 @@ const handleBlogPosts = (main, metadata) => {
       return `categories/${kebab}`;
     })
     .join(', ');
-  metadata['Template'] = 'blog-post';
+  metadata.Template = 'blog-post';
 };
 
 const handleLinks = (main) => {
@@ -551,16 +561,17 @@ export const handleSections = (main) => {
 
   sections.forEach((section) => {
     if (section !== sections[sections.length - 1]) {
-
       // handle sections that have no content at all - there are many of these on many pages.
       if (section.innerHTML.trim() === '') {
         section.remove();
       }
 
       const firstDiv = section.querySelector('div');
-      // add more below later - there are many shades of slighly different gray colors being used as background colors and borders.
+      // add more below later - there are many shades of slighly different
+      // gray colors being used as background colors and borders.
       const grayBackgroundSections = ['featuredEventsContainer'];
-      const isGrayBackgroundSection = firstDiv && grayBackgroundSections.some((cls) => firstDiv.classList.contains(cls));
+      const isGrayBackgroundSection = firstDiv
+        && grayBackgroundSections.some((cls) => firstDiv.classList.contains(cls));
       const isIconFramedSection = firstDiv && firstDiv.classList.contains('storyCardBadge');
       const isPrimaryIntro = section.classList.contains('primaryContentIntro');
 
@@ -606,9 +617,9 @@ export const handleSections = (main) => {
 };
 
 const handleHeroes = (main) => {
-  let heroImage = main.querySelector('.heroImage');
-  let h1 = main.querySelector('h1');
-  let heroTitle = main.querySelector('.heroImageTitle');
+  const heroImage = main.querySelector('.heroImage');
+  const h1 = main.querySelector('h1');
+  const heroTitle = main.querySelector('.heroImageTitle');
 
   if (heroImage && heroTitle && h1) {
     if (heroTitle.tagName !== 'H1') {
@@ -624,11 +635,9 @@ const handleHeroes = (main) => {
       heroImage.after(newH1);
       newH1.after(document.createElement('hr'));
     }
-
   } else if (heroImage && h1) {
     h1.after(document.createElement('hr'));
-  }
-  else if (!h1) {
+  } else if (!h1) {
     const h2 = main.querySelector('h2');
     if (h2) {
       const newH1 = document.createElement('h1');
@@ -683,7 +692,7 @@ const handleAccordions = (main) => {
 
     panels.forEach((panel) => {
       const heading = panel.querySelector('.panel-heading');
-      heading.querySelectorAll('.pepicon').forEach(icon => icon.remove());
+      heading.querySelectorAll('.pepicon').forEach((icon) => icon.remove());
       const body = panel.querySelector('.panel-body');
 
       if (heading && body) {
@@ -757,44 +766,44 @@ const handleEvents = (main, document, metadata) => {
 
   const eventCard = main.querySelector('.event-card');
   const categoryImage = eventCard?.querySelector('img');
-  
+
   const categoryIdSpan = eventCard?.querySelector('span.category-id');
   const categoryId = categoryIdSpan?.textContent?.trim() || '';
-  
+
   if (categoryIdSpan) {
     categoryIdSpan.remove();
   }
-  
+
   const categoryName = eventCard?.querySelector('.title')?.textContent?.trim() || '';
-  
+
   const eventDetails = main.querySelector('.event-details');
   let startDate = '';
   let endDate = '';
-  
+
   if (eventDetails) {
     const dateLi = eventDetails.querySelector('li:has(.icon__calendar-month)');
     if (dateLi) {
       const dateText = dateLi.textContent.trim();
-      
+
       const throughMatch = dateText.match(/[A-Za-z]+day,?\s+([A-Za-z]+\s+\d+),?\s+through\s+[A-Za-z]+day,?\s+([A-Za-z]+\s+\d+),?\s+(\d{4})/);
       const singleDateMatch = dateText.match(/[A-Za-z]+day,?\s+([A-Za-z]+\s+\d+),?\s+(\d{4})/);
-      
+
       if (throughMatch) {
         const startPart = throughMatch[1].trim();
         const endPart = throughMatch[2].trim();
         const year = throughMatch[3];
-        
+
         startDate = `${startPart}, ${year}`;
         endDate = `${endPart}, ${year}`;
       } else if (singleDateMatch) {
         const datePart = singleDateMatch[1].trim();
         const year = singleDateMatch[2];
-        
+
         startDate = `${datePart}, ${year}`;
       }
     }
   }
-  
+
   // TODO: Add event-specific metadata fields
   metadata['Category ID'] = categoryId;
   metadata['Category Name'] = categoryName;
@@ -802,10 +811,10 @@ const handleEvents = (main, document, metadata) => {
   if (endDate) {
     metadata['End Date'] = endDate;
   }
-  metadata['Price'] = 'placeholder';
+  metadata.Price = 'placeholder';
   metadata['Registration Link'] = 'placeholder';
   metadata['Category Image'] = categoryImage;
-  metadata['Template'] = 'event';
+  metadata.Template = 'event';
 
   WebImporter.DOMUtils.remove(main, [
     '.heroImage',
@@ -850,7 +859,7 @@ const handleEvents = (main, document, metadata) => {
       itemNote.after(WebImporter.Blocks.createBlock(document, {
         name: 'Section Metadata',
         cells: [['Style', 'Gray Background, Center']],
-      }))
+      }));
     }
   }
 };
@@ -905,7 +914,7 @@ export default {
       '#blogDetail .asTileFeaturedList',
       '.article-categories',
       '.article-author',
-      '.carouselContainer', //temporary
+      '.carouselContainer', // temporary
       '.expanded-drawer.collapse',
       '.contactInfo',
       '.sponsor.contentGroupItem',

@@ -36,7 +36,7 @@ function applyMobileCardBg(block) {
   if (!bgImage) return;
   if (window.matchMedia('(min-width: 1024px)').matches) return;
   block.querySelectorAll('ul > li').forEach((li) => {
-    li.classList.add('cards-bgImage');
+    li.classList.add('cards-bg-image');
     li.style.backgroundImage = `url(${bgImage})`;
   });
 }

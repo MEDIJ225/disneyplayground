@@ -119,7 +119,7 @@ async function createForm(formHref, submitHref) {
 
     radioInput.addEventListener('change', () => {
       // First, show all resort thumbnails that were previously hidden
-      const resortSelectContainers = form.querySelectorAll('.locationInterestDiv .special-events-thumbnails');
+      const resortSelectContainers = form.querySelectorAll('.location-interest-div .special-events-thumbnails');
       resortSelectContainers.forEach((container) => {
         const allThumbnails = container.querySelectorAll('.resort-thumbnail');
         allThumbnails.forEach((thumb) => {
@@ -148,7 +148,7 @@ async function createForm(formHref, submitHref) {
     // Check initial state on page load
     if (radioInput.checked && hideResortClass) {
       const classesToHide = hideResortClass.split(',').map((c) => c.trim()).filter((c) => c);
-      const resortSelectContainers = form.querySelectorAll('.locationInterestDiv .special-events-thumbnails');
+      const resortSelectContainers = form.querySelectorAll('.location-interest-div .special-events-thumbnails');
       resortSelectContainers.forEach((container) => {
         classesToHide.forEach((classToHide) => {
           const thumbnailLink = container.querySelector(`.resort-thumbnail a.${classToHide}`);

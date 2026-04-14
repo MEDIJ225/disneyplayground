@@ -325,11 +325,13 @@ h2#what-type-of-experience-are-you-planning {
     width: 100%;
     display: block;
   }
+
   .form .resort-thumbnail img{
     width: 100% !important;
         height: auto !important;
   }
-  .locationInterestDiv {
+
+  .location-interest-div {
     margin-bottom: 20px;
 }
 
@@ -471,7 +473,7 @@ h2#what-type-of-experience-are-you-planning {
 @media (width < 600px) {
   .form .experience-plan {
    display: flex;
-        margin: 0px;
+        margin: 0;
         gap: 8px;
   }
   
@@ -489,26 +491,33 @@ h2#what-type-of-experience-are-you-planning {
     font-size: var(--body-font-size-xs, 0.75rem);
     line-height: 16px;
   }
+
   .form .experience-plan-tile .title{
     font-size: var(--heading-font-size-xs, 1rem);
     margin-bottom: 5px;
   }
+
   .form .experience-plan-wrapper{
     margin-bottom: 20px;
   }
+
   .field-wrapper.select-wrapper {
     margin-bottom: 20px;
 }
+
 .form input, .form select{
   width: 100%;
 }
+
 .form.block{
   padding: 10px 10px 15px;
   background-color: white;
 }
+
 .form .field-wrapper.submit-wrapper{
   margin-top: 20px;
 }
+
 .form-wrapper {
     padding: 10px !important;
 }

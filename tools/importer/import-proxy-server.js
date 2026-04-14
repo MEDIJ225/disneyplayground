@@ -1,9 +1,9 @@
-import puppeteer from 'puppeteer'; // eslint-disable-line import/no-extraneous-dependencies
+import puppeteer from 'puppeteer'; // eslint-disable-line import/no-extraneous-dependencies, import/no-unresolved
 import { createServer } from 'http';
-import open from 'open'; // eslint-disable-line import/no-extraneous-dependencies
-import { logger, colors } from './utils.js';
+import open from 'open'; // eslint-disable-line import/no-extraneous-dependencies, import/no-unresolved
 import { readFileSync } from 'fs';
 import { join } from 'path';
+import { logger, colors } from './utils.js';
 
 const PORT = 4001;
 const CACHE_TTL = 5 * 60 * 1000;
@@ -89,17 +89,17 @@ async function prerenderPage(targetUrl) {
     const fontData = readFileSync(fontPath);
     const fontBase64 = fontData.toString('base64');
 
-    await page.evaluateOnNewDocument((fontBase64) => {
+    await page.evaluateOnNewDocument((encodedFont) => {
       const fontInjection = `
       <style>
         @font-face {
           font-family: 'Pepmdx';
-          src: url('data:font/woff;base64,${fontBase64}') format('woff');
+          src: url('data:font/woff;base64,${encodedFont}') format('woff');
           font-weight: normal;
           font-style: normal;
         }
       </style>`;
-      
+
       if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', () => {
           const head = document.head || document.getElementsByTagName('head')[0];
@@ -132,7 +132,7 @@ async function prerenderPage(targetUrl) {
         let totalHeight = 0;
         const distance = 100;
         const timer = setInterval(() => {
-          const scrollHeight = document.body.scrollHeight;
+          const { scrollHeight } = document.body;
           window.scrollBy(0, distance);
           totalHeight += distance;
 
@@ -146,15 +146,12 @@ async function prerenderPage(targetUrl) {
 
     await page.waitForFunction(() => {
       const images = Array.from(document.querySelectorAll('img'));
-      return images.every(img => img.complete || img.naturalHeight !== 0);
+      return images.every((img) => img.complete || img.naturalHeight !== 0);
     }, { timeout: 10000 }).catch(() => {
-      console.log('Some images may have failed to load.')
+      console.log('Some images may have failed to load.');
     });
 
-
-    await page.waitForFunction(() => {
-      return document.querySelector('span[category-id]') !== null;
-    }, { timeout: 10000 }).catch(() => {
+    await page.waitForFunction(() => document.querySelector('span[category-id]') !== null, { timeout: 10000 }).catch(() => {
     });
 
     await new Promise((resolve) => {
@@ -172,43 +169,41 @@ async function prerenderPage(targetUrl) {
           .replace(/\s*ng-transclude="[^"]*"/g, '')
           .replace(/\s*ng-style="[^"]*"/g, '')
           .replace(/\s*aria-hidden="[^"]*"/g, '');
-        
+
         return `<span class="${classes}"${cleanAttrs}>${content}</span>`;
-      }
+      },
     );
 
-     html = html.replace(
-       /<a([^>]*?)>\s*<img([^>]*?)>\s*<\/a>/g,
-       (match, anchorAttrs, imgAttrs) => {
-         const cleanImgAttrs = imgAttrs
-           .replace(/\s*ng-if="[^"]*"/g, '')
-           .replace(/\s*ng-class="[^"]*"/g, '')
-           .replace(/\s*ng-attr-[^=]*="[^"]*"/g, '')
-           .replace(/\s*image-data="[^"]*"/g, '')
-           .replace(/\s*ng-src="[^"]*"/g, '')
-           .replace(/\s*lazy-load="[^"]*"/g, '');
-         return `<img${cleanImgAttrs}>`;
-       }
-     );
+    html = html.replace(
+      /<a([^>]*?)>\s*<img([^>]*?)>\s*<\/a>/g,
+      (match, anchorAttrs, imgAttrs) => {
+        const cleanImgAttrs = imgAttrs
+          .replace(/\s*ng-if="[^"]*"/g, '')
+          .replace(/\s*ng-class="[^"]*"/g, '')
+          .replace(/\s*ng-attr-[^=]*="[^"]*"/g, '')
+          .replace(/\s*image-data="[^"]*"/g, '')
+          .replace(/\s*ng-src="[^"]*"/g, '')
+          .replace(/\s*lazy-load="[^"]*"/g, '');
+        return `<img${cleanImgAttrs}>`;
+      },
+    );
 
-     html = html.replace(
-       /<a([^>]*?)>([^<]*?)<\/a>/g,
-       (match, attrs, content) => {
-         let linkText = content.trim();
-         if (!linkText) {
-           const hrefMatch = attrs.match(/href=["']([^"']*)["']/);
-           linkText = hrefMatch ? hrefMatch[1] : 'Learn More';
-         }
-         return `<a${attrs}>${linkText}</a>`;
-       }
-     );
+    html = html.replace(
+      /<a([^>]*?)>([^<]*?)<\/a>/g,
+      (match, attrs, content) => {
+        let linkText = content.trim();
+        if (!linkText) {
+          const hrefMatch = attrs.match(/href=["']([^"']*)["']/);
+          linkText = hrefMatch ? hrefMatch[1] : 'Learn More';
+        }
+        return `<a${attrs}>${linkText}</a>`;
+      },
+    );
 
-     html = html.replace(
-       /<span[^>]*category-id=["']([^"']*)["'][^>]*>\s*<\/span>/g,
-       (match, categoryId) => {
-         return `<span class="category-id">${categoryId}</span>`;
-       }
-     );
+    html = html.replace(
+      /<span[^>]*category-id=["']([^"']*)["'][^>]*>\s*<\/span>/g,
+      (match, categoryId) => `<span class="category-id">${categoryId}</span>`,
+    );
 
     const isRichContent = html.includes('ng-app="runSpa"') && html.length > 20000;
 

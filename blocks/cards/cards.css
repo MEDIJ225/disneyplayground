@@ -642,7 +642,7 @@
           }
         }
 
-        &.cards-bgImage {
+        &.cards-bg-image {
           background-repeat: no-repeat;
           background-position: center 40%;
           background-size: 140% auto;
@@ -708,6 +708,7 @@
             &:is(h4) { font-size: var(--heading-font-size-xs); }
             &:is(h5) { font-size: var(--heading-font-size-xxs); }
             &:is(h6) { font-size: var(--heading-font-size-xxxs); }
+
             margin: 17px 0 15px;
           }
         }
@@ -721,11 +722,12 @@
     &[data-background-image] {
       background-image: none;
     }
+
     margin: 0;
 
     .cards.rectangle-hover {
       > ul {
-        > li.cards-bgImage {
+        > li.cards-bg-image {
           background-size: 270% auto;
         }
       }
