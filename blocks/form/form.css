@@ -1,0 +1,658 @@
+
+.form.block form {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 15px 24px;
+ }
+
+.sub-heading {
+    grid-column: span 2;
+}
+
+h3#form-1, h3#form, label#form-locationofinterest-label {
+    font-size: var(--body-font-size-s);
+    margin: 0;
+    line-height: 16px;
+}
+
+/* stylelint-disable-next-line selector-id-pattern */
+dt#form-locationofinterestHidden-label {
+    display: none;
+}
+
+ @media (width >= 600px) {
+  .form.block form{
+    grid-template-columns: repeat(2, 1fr);
+    
+  }
+
+  .form.block .field-wrapper.half input,
+  .form.block .field-wrapper.half select,
+  .form.block .field-wrapper.half textarea {
+    width: 100%;      
+    max-width: 100%;
+  }
+ }
+
+
+.form .field-wrapper {
+  display: grid;
+  grid-auto-flow: row;
+  align-items: center;
+
+  @media (width >= 600px) {
+    grid-column: 1 / -1;
+  }
+}
+
+.form .field-wrapper[hidden] {
+  display: none;
+}
+
+
+  @media (width >= 600px) {
+    .form .field-wrapper.half {
+    grid-column: span 1;
+  }
+
+  .form.block .field-wrapper.half input, .form.block .field-wrapper.half select, .form.block .field-wrapper.half textarea {
+    width: 100%;
+}
+}
+
+.form .field-wrapper.submit-wrapper {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.form .field-wrapper.submit-wrapper button.button{
+  background-color: #193a65;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: bold;
+    padding: 7px 0;
+        text-align: center;
+    text-decoration: none;
+    width: 120px;
+}
+
+.form fieldset {
+  display: grid;
+  grid-auto-flow: row;
+  margin: 0;
+  border: none;
+  padding: 0;
+}
+
+.form form fieldset .field-wrapper + .field-wrapper {
+  margin-top: 24px;
+}
+
+.form .field-group {
+  display: grid;
+  grid-auto-flow: row;
+  gap: 24px;
+  margin: 0;
+  padding: 0;
+}
+
+.form .field-group-label {
+  margin-bottom: 0.5em;
+  font-size: var(--heading-font-size-s);
+  font-weight: 700;
+  color: var(--navy);
+}
+
+.form form .field-group .field-wrapper + .field-wrapper {
+  margin-top: 0;
+}
+
+.form form > .selection-wrapper + .selection-wrapper,
+.form form fieldset .selection-wrapper + .selection-wrapper {
+  margin-top: 0.25em;
+}
+
+.form label,
+.form fieldset > legend {
+  margin-bottom: 0.25em;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--navy);
+}
+
+.form .selection-wrapper label {
+  margin: 0;
+  font-weight: normal;
+}
+
+.form input,
+.form select,
+.form textarea {
+  box-sizing: border-box;
+  display: block;
+  margin: 0;
+  padding: 12px;
+  background-color: var(--background-color);
+  color: var(--navy);
+  font-size: var(--body-font-size-s);
+  transition: border-color 0.2s;
+  box-shadow: 0 3px 3px -3px #666;
+    border-radius: 6px;
+    border: 1px solid #bbb;
+}
+
+.form input,
+.form select{
+ width: 50%;
+    max-width: unset;
+}
+
+.form textarea {
+ width: 100%;
+    resize: vertical;
+    min-height: 160px;
+}
+
+.form input:hover,
+.form select:hover,
+.form textarea:hover {
+  border: 1px solid var(--text-color);
+}
+
+input[type="checkbox"], input[type="radio"], input#form-datesflexible {
+    width: 20px;
+    height: 20px;
+    box-shadow: none;
+}
+
+.half.field-wrapper.checkbox-wrapper.selection-wrapper{
+  grid-column: span 2;
+}
+
+.form .field-wrapper.selection-wrapper {
+  display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto;
+    gap: 0.5rem 1ch;
+}
+
+.form .field-wrapper.selection-wrapper .error-alert{
+  grid-column: 1 / -1;
+    grid-row: 1;
+}
+
+.form label[data-required]::after {
+  content: '*';
+  color: var(--error);
+  margin-inline-start: 1ch;
+}
+
+.form .toggle-wrapper .switch {
+  position: relative;
+  display: inline-block;
+  width: 52px;
+  height: 28px;
+}
+
+.form .toggle-wrapper input {
+  opacity: 0;
+  width: 52px;
+  height: 28px;
+}
+
+.form .toggle-wrapper .slider {
+  position: absolute;
+  cursor: pointer;
+  inset: 0;
+  border-radius: 28px;
+  background-color: var(--dark-color);
+  transition: background-color 0.2s;
+}
+
+.form .toggle-wrapper .slider::before {
+  content: '';
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  top: 2px;
+  left: 2px;
+  border-radius: 50%;
+  background-color: var(--background-color);
+  transition: transform 0.2s;
+}
+
+.form .toggle-wrapper input:checked + .slider {
+  background-color: var(--link-color);
+}
+
+.form .toggle-wrapper input:focus + .slider {
+  outline: 2px solid var(--link-color);
+  outline-offset: 2px;
+}
+
+.form .toggle-wrapper input:checked + .slider::before {
+  transform: translateX(24px);
+}
+
+.form .error {
+  border-radius: 4px;
+  box-shadow: none;
+  font-weight: 400;
+  margin-bottom: .6rem;
+  padding: 1rem;
+  background-color: #fdedef;
+  border: 1px solid var(--error);
+}
+
+.form .error-alert .form-validation-error {
+  color: var(--error);
+}
+
+.form .error-alert .form-validation-error::before {
+  content: "*";
+}
+
+.form .error-alert .warning-circle-fill {
+  color: var(--error);
+}
+
+h1#submit-a-request {
+    font-size: 28px;
+    font-weight: 300;
+}
+
+.section.center .default-content-wrapper p {
+    font-size: 14px;
+    line-height: 17px;
+}
+
+h2#what-type-of-experience-are-you-planning {
+    margin-top: 18px;
+    font-size: 18px;
+    line-height: 20px;
+    color: #222;
+    margin-bottom: 0;
+  }
+
+.section.form-container {
+    margin-top: 0;
+}
+
+.section.center {
+    margin-bottom: 0;
+}
+
+@media (width >= 600px) {
+  .form-container .default-content-wrapper {
+    max-width: 570px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .form input,
+  .form select,
+  .form textarea {
+    max-width: 50vw;
+  }
+
+  .form .button {
+    max-width: max-content;
+  }
+
+  .form fieldset {
+    grid-template-columns: repeat(2, auto);
+    gap: 0.25em 24px;
+  }
+
+  .form form > .selection-wrapper + .selection-wrapper,
+  .form form fieldset .field-wrapper + .field-wrapper,
+  .form form fieldset .selection-wrapper + .selection-wrapper {
+    margin-top: 0;
+  }
+}
+
+@media (width >= 900px) {
+  .form fieldset {
+    grid-template-columns: repeat(3, auto);
+  }
+}
+
+/* Mobile view: adjust only width */
+@media (width < 600px) {
+  .form.block form {
+    width: 100%;
+    display: block;
+  }
+  .form .resort-thumbnail img{
+    width: 100% !important;
+        height: auto !important;
+  }
+  .locationInterestDiv {
+    margin-bottom: 20px;
+}
+
+}
+
+/* iPad portrait & landscape */
+@media (768px <= width <= 1366px) {
+.form input,
+  .form select,
+  .form textarea {
+    max-width: unset;
+  }
+  
+}
+
+.form .hidden {
+  display: none;
+}
+
+.select-announcer {
+  position: absolute;
+  left: -9999px;
+}
+
+/* Experience Plan Tiles */
+.form .experience-plan {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin: 0 100px;
+  padding: 0;
+}
+
+.form .experience-plan-wrapper {
+  grid-column: 1 / -1;
+}
+
+/* The entire tile is the radio button */
+.form .experience-plan-tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  background-color: var(--background-color, #fff);
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+/* Hide radio inputs inside tiles */
+.form .experience-plan-tile input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  overflow: hidden;
+}
+
+/* Selected state - no border change, only icon container changes */
+.form .experience-plan-tile.btn-selected {
+  border: none;
+  background-color: var(--background-color, #fff);
+}
+
+/* Icon container inside tile */
+.form .experience-plan-tile .btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 2px solid var(--border-color, #D0D7DE);
+  background-color: var(--background-color, #fff);
+  margin-bottom: 16px;
+  transition: all 0.3s ease;
+  pointer-events: none; /* Icon container is not clickable, tile is */
+}
+
+/* Selected tile - icon container styling */
+.form .experience-plan-tile.btn-selected .btn {
+  border: 2px solid var(--link-color, #0c76af);
+  background-color: var(--dark-blue, #173662);
+}
+
+.form .experience-plan-tile .btn .icon {
+  font-size: var(--icon-size-xl, 48px);
+  color: var(--link-color, #0c76af);
+  transition: color 0.3s ease;
+}
+
+.form .experience-plan-tile.btn-selected .btn .icon {
+  color: var(--white, #fff);
+}
+
+.form .experience-plan-tile .title {
+  font-size: var(--heading-font-size-s, 1.125rem);
+  font-weight: 700;
+  color: var(--text-color, #000);
+  margin-bottom: 8px;
+  line-height: 1.3;
+  transition: color 0.3s ease;
+}
+
+.form .experience-plan-tile.btn-selected .title {
+  /* Keep dark text color */
+  color: var(--text-color, #000);
+}
+
+.form .experience-plan-tile .brief-desc {
+  font-size: var(--body-font-size-s, 0.875rem);
+  color: var(--text-color, #666);
+  line-height: 20px;
+    max-width: 160px;
+  transition: color 0.3s ease;
+}
+
+.form .experience-plan-tile.btn-selected .brief-desc {
+  /* Keep gray text color */
+  color: var(--text-color, #666);
+}
+
+/* Responsive: 2 columns on tablet */
+@media (width < 900px) {
+  .form .experience-plan {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+/* Responsive: 1 column on mobile */
+@media (width < 600px) {
+  .form .experience-plan {
+   display: flex;
+        margin: 0px;
+        gap: 8px;
+  }
+  
+  .form .experience-plan-tile .btn {
+    width: 80px;
+        height: 80px;
+  }
+  
+  .form .experience-plan-tile .btn .icon {
+    font-size: var(--icon-size-l, 40px);
+  }
+  
+  .form .experience-plan-tile .brief-desc {
+    max-width: 100%;
+    font-size: var(--body-font-size-xs, 0.75rem);
+    line-height: 16px;
+  }
+  .form .experience-plan-tile .title{
+    font-size: var(--heading-font-size-xs, 1rem);
+    margin-bottom: 5px;
+  }
+  .form .experience-plan-wrapper{
+    margin-bottom: 20px;
+  }
+  .field-wrapper.select-wrapper {
+    margin-bottom: 20px;
+}
+.form input, .form select{
+  width: 100%;
+}
+.form.block{
+  padding: 10px 10px 15px;
+  background-color: white;
+}
+.form .field-wrapper.submit-wrapper{
+  margin-top: 20px;
+}
+.form-wrapper {
+    padding: 10px !important;
+}
+}
+
+/* Resort Select / Location Select Thumbnails */
+.form .special-events-thumbnails {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin: 24px 0 0;
+  padding: 0;
+  width: 100%;
+}
+
+.form .resort-thumbnail {
+  position: relative;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  background-color: var(--background-color, #fff);
+  box-shadow: -4px 0 20px 1px #D4CDCC;
+}
+
+.form .resort-thumbnail i {
+  position: absolute;
+    top: -13px;
+    right: -16px;
+    z-index: 10;
+    color: #a1afc0;
+
+    /* color: var(--gray, #666); */
+    background-color: var(--white, #fff);
+    border-radius: 50%;
+    width: 36px;
+    height: 31px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: 1px 1px 6px #fff;
+}
+
+.form .resort-thumbnail.selected i {
+  background-color: var(--primary, #1994d7);
+  color: var(--white, #fff);
+}
+
+.form .resort-thumbnail a {
+  display: block;
+  text-decoration: none;
+  position: relative;
+  background-color: var(--background-color, #fff);
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.form .resort-thumbnail img {
+  width: 215px;
+    height: 80px;
+    display: block;
+    border-radius: 6px 6px 0 0;
+    transition: opacity 0.3s ease;
+}
+
+.form .resort-thumbnail:hover img {
+  opacity: 0.9;
+}
+
+.form .resort-thumbnail .offscreen {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.form .resort-thumbnail .resort-title {
+  margin: 0;
+    padding: 15px 0 15px 13px;
+    font-size: 14px; /* var(--heading-font-size-xs, 1rem); */
+    font-weight: inherit;
+    color: var(--text-color, #000);
+    text-align: left;
+    transition: color 0.3s ease, background-color 0.3s ease;
+    background-color: var(--background-color, #fff);
+    border-radius: 0 0 6px 6px;
+}
+
+.form .resort-thumbnail.selected .resort-title {
+  color: var(--white, #fff);
+  background-color: var(--link-color, #0c76af);
+}
+
+/* Responsive: 2 columns on tablet */
+@media (width < 900px) {
+  .form .special-events-thumbnails {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+/* Responsive: 1 column on mobile */
+@media (width < 600px) {
+  .form .special-events-thumbnails {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
+/* File input field */
+.form .file-input-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.form .file-input-wrapper .file-display {
+  flex: 1;
+}
+
+.form .file-input-wrapper .file-browse-button {
+  white-space: nowrap;
+  background: #fff none repeat scroll 0 0;
+    border: 2px solid #0c76af;
+    border-radius: 5px;
+    font-size: 16px;
+    height: 40px;
+    margin-left: 10px;
+    margin-top: 3px;
+    padding: 0;
+    width: 130px;
+    color: #0c76af;
+    cursor: pointer;
+}
+
+.form input[type="file"].file-input-native {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  overflow: hidden;
+}

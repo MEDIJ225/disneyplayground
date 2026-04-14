@@ -1,0 +1,211 @@
+.accordion {
+  .accordion-item {
+    margin-bottom: 0;
+    border-bottom: 1px solid var(--light-gray);
+    border-radius: 4px;
+    background-color: #fff;
+    padding: var(--spacing-s) 0;
+
+    @media (width < 1024px) {
+      margin: 0 var(--spacing-s);
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+      border-bottom: none;
+    }
+
+    &:only-child {
+      border: 1px solid var(--light-gray);
+      box-shadow: 0 2px 8px rgb(0 0 0 / 8%);
+      padding: var(--spacing-s);
+      margin-bottom: 0;
+    }
+
+    summary {
+      width: 100%;
+      padding: var(--spacing-s) 0;
+      background: none;
+      border: none;
+      text-align: left;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      transition: color 0.2s ease;
+      list-style: none;
+
+      @media (width < 1024px) {
+        padding: 10px 0;
+      }
+
+      &::-webkit-details-marker {
+        display: none;
+      }
+
+      &::-moz-list-bullet {
+        list-style-type: none;
+      }
+
+      &:hover {
+        color: var(--primary);
+      }
+
+      &:focus {
+        outline: 2px solid var(--primary);
+        outline-offset: 2px;
+      }
+
+      .icon {
+        transition: transform 0.3s ease;
+        color: var(--text-color);
+        font-size: var(--icon-size-ss);
+        transform: rotate(-90deg);
+      }
+    }
+
+    &[open] summary {
+      color: var(--primary);
+      
+      .icon {
+        transform: rotate(0deg);
+        color: var(--primary);
+      }
+      
+      .accordion-title{
+        color: var(--primary);
+      }
+    }
+
+    &[open] div {
+      max-height: unset;
+      opacity: 1;
+      padding: var(--spacing-m) 0 var(--spacing-l) 0;
+    }
+
+    div {
+      padding: 0;
+      background: none;
+      font-family: var(--body-font-family);
+      font-size: var(--body-font-size-m);
+      line-height: 1.6;
+      color: var(--navy);
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      transition: max-height 0.3s ease, opacity 0.3s ease, padding 0.3s ease;
+
+      p {
+        margin: 0 0 var(--spacing-s) 0;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+
+      ul,
+      ol {
+        margin: 0 0 var(--spacing-s) 0;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+
+      li {
+        margin-bottom: var(--spacing-xxs);
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+
+      a {
+        color: var(--primary);
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  .accordion-title {
+    flex: 1;
+    color: #253B56;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: var(--body-font-size-xl);
+    line-height: 25px;
+
+    @media (width < 1024px) {
+      font-size: var(--body-font-size-l);
+    }
+  }
+
+  &.navy-text {
+      .accordion-item {
+        .accordion-title {
+          color: var(--navy-1);
+        }
+      }
+
+      & div {
+            & p {
+                &:last-child {
+                  color: var(--navy-1);
+                }
+              }
+            }
+    }
+    
+  .fragment-wrapper.columns-content-col {
+    margin-bottom: 0;
+    border-radius: 4px;
+    overflow: hidden;
+
+    @media (width >= 1024px) {
+      padding-left: var(--spacing-s);
+      padding-right: var(--spacing-ss);
+    }
+
+    &:not(:last-child) {
+      @media (width >= 1024px) {
+        border-right: 1px solid #D0D7DE;
+      }
+    }
+  }
+
+  .fragment-wrapper.columns-content-col>h2 {
+    background: #EEE;
+    line-height: 33px;
+    text-align: left;
+    font-size: var(--spacing-m);
+    padding: var(--spacing-xs) var(--spacing-ss) var(--spacing-xs);
+  }
+
+  .columns-wrapper {
+    @media (width < 1024px) {
+      padding: 0;
+    }
+
+    @media (width > 1024px) {
+      margin: 0 15%;
+    }
+  }
+
+  .block {
+    text-align: left;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  .columns {
+    &>div {
+      @media (width >=1024px) {
+        gap: 0;
+      }
+    }
+  }
+}

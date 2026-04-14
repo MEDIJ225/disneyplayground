@@ -1,0 +1,51 @@
+/* Make all images in .icon-list full width */
+.icon-list img {
+  width: 100%;
+}
+
+/* Default mobile layout: content below image */
+.icon-list > div > div {
+  order: 1;
+}
+
+.icon-list .icon{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--icon-size-xl);
+  height: var(--icon-size-xl);
+  border-radius: 50%;
+  border: 2px solid var(--navy);
+  font-size: 30px;
+}
+
+/* Image column appears first by default */
+.icon-list > div > .icon-list-img-col {
+  order: 0;
+}
+
+/* Ensure images are block-level (remove bottom spacing) */
+.icon-list > div > .icon-list-img-col img {
+  display: block;
+}
+
+/* Desktop styles: 1024px and above */
+@media (width >= 1024px) {
+  .icon-list > div {
+    display: flex;
+    align-items: start;
+    flex-direction: unset; /* 'unset' removes any specific direction */
+    gap: var(--spacing-m);
+  }
+
+  .icon-list > div > div {
+    order: unset; /* reset ordering to natural DOM flow */
+  }
+}
+
+/* ✅ Add a blank line before this media query */
+@media (width <= 600px) {
+  .icon-list > div {
+    display: flex;
+  }
+}

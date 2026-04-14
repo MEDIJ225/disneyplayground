@@ -1,0 +1,330 @@
+.blog-filters {
+  .blog-filters-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    margin-bottom: var(--spacing-m);
+  }
+
+  .mobile-filter-button {
+    display: none;
+    width: 100%;
+    padding: 12px 16px;
+    background: var(--link-color, #06c);
+    color: var(--white);
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-bottom: var(--spacing-m);
+  }
+
+
+  .multi-select-trigger:hover .multi-select-text,
+  .multi-select-trigger:hover .icon,
+  .multi-select.open .multi-select-trigger .multi-select-text,
+  .multi-select.open .multi-select-trigger .icon {
+    color: var(--link-color);
+  }
+
+  @media (width <=1024px) {
+    .blog-filters-container {
+      display: none;
+    }
+
+    .mobile-filter-button {
+      display: block;
+    }
+  }
+
+  .blog-filter {
+    display: inline-flex;
+    flex-direction: column;
+    gap: var(--spacing-xxs);
+    font-weight: 600;
+    color: var(--text-color);
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+
+  }
+
+  /* Remove left border of second child's trigger by default */
+  .blog-filter:nth-child(2) .multi-select-trigger {
+    border-left: 0;
+  }
+
+  /* If first child's multi-select is open, remove left border of second child's trigger */
+  .blog-filter:first-child:has(.multi-select.open) ~ .blog-filter:nth-child(2) .multi-select-trigger {
+    border-left: 0;
+  }
+
+  /* If first child's multi-select is closed AND second child's multi-select is open, add left border to second child's trigger */
+  .blog-filter:first-child:not(:has(.multi-select.open)) ~ .blog-filter:nth-child(2):has(.multi-select.open) .multi-select-trigger {
+    border-left: 1px solid var(--overlay-border-color, #ddd);
+  }
+
+  /* If second child's multi-select is open, remove right border of first child's trigger */
+  .blog-filters-container:has(.blog-filter:nth-child(2) .multi-select.open) .blog-filter:first-child .multi-select-trigger {
+    border-right: 0;
+  }
+
+  .blog-filter-select {
+    display: none;
+  }
+
+  .multi-select {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .multi-select-trigger {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    width: 100%;
+    max-width: 100%;
+    padding: 8px 12px;
+    border: 1px solid var(--overlay-border-color, #ddd);
+    border-radius: 0;
+    background: var(--background-color);
+    color: inherit;
+    cursor: pointer;
+    user-select: none;
+    margin: 0;
+    overflow: hidden;
+    box-sizing: border-box;
+  }
+
+  .multi-select-text {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xxs);
+    text-align: left;
+    min-width: 0;
+    flex: 1;
+  }
+
+  .multi-select-title {
+    font-weight: 600;
+    font-size: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .multi-select-summary {
+    font-weight: 400;
+    font-size: 16px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 100%;
+  }
+
+  .multi-select-menu {
+    position: absolute;
+    top: calc(98%);
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: var(--background-color);
+    border: 1px solid var(--overlay-border-color, #ddd);
+    border-top: 0;
+    padding: 8px 0;
+    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
+    overflow: auto;
+    display: none;
+    max-height: 300px;
+    overflow-y: auto;
+    box-sizing: border-box;
+
+    input[type="checkbox"] {
+      width: 20px;
+      height: 20px;
+      accent-color: var(--green);   
+    }
+  }
+
+  .multi-select.open>.multi-select-menu {
+    display: block;
+  }
+
+}
+
+.mobile-filter-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--white);
+  z-index: var(--z-index-popover);
+  overflow-y: auto;
+}
+
+.mobile-filter-overlay.open {
+  display: block;
+}
+
+.mobile-filter-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  border-bottom: 1px solid var(--overlay-border-color, #ddd);
+  position: sticky;
+  top: 0;
+  background: var(--white);
+  z-index: 1;
+}
+
+.mobile-filter-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+.mobile-filter-close {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-color);
+  padding: 4px;
+  width: auto;
+  min-width: unset;
+}
+
+.mobile-filter-close>i {
+  font-size: var(--icon-size-s);
+}
+
+.mobile-filter-content {
+  padding: 16px;
+}
+
+.mobile-filter-section {
+  margin-bottom: 24px;
+}
+
+.mobile-filter-section input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  accent-color: var(--green);
+}
+
+.mobile-filter-section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--overlay-border-color, #ddd);
+  cursor: pointer;
+  user-select: none;
+}
+
+.mobile-filter-section-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+.mobile-filter-section-content {
+  display: none;
+  padding: 12px 0;
+}
+
+.mobile-filter-section.open .mobile-filter-section-content {
+  display: block;
+}
+
+.mobile-filter-actions {
+  position: sticky;
+  bottom: 0;
+  background: var(--white);
+  padding: 16px;
+  border-top: 1px solid var(--overlay-border-color, #ddd);
+  display: flex;
+  gap: 12px;
+}
+
+.mobile-filter-reset {
+  flex: 1;
+  padding: 12px 16px;
+  background: var(--white);
+  color: var(--link-color, #06c);
+  border: 1px solid var(--link-color, #06c);
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.mobile-filter-apply {
+  flex: 1;
+  padding: 12px 16px;
+  background: var(--link-color, #06c);
+  color: var(--white);
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+
+  &:hover {
+    background: var(--link-color, #06c);
+    color: var(--white);
+  }
+}
+
+.multi-select-item,
+.multi-select-group-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 4px;
+  cursor: pointer;
+
+  @media (width < 1024px) {
+    padding: 20px 50px 0;
+    border-bottom: 1px solid #ddd;
+    min-height: 60px;
+  }
+}
+
+.multi-select-item:hover {
+  color: var(--link-hover-color);
+}
+
+.multi-select-group {
+  padding-bottom: 4px;
+  margin-bottom: 4px;
+  border-bottom: 1px solid rgba(0 0 0 / 8%);
+}
+
+.multi-select-group:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.multi-select-group-items {
+  padding-left: 24px;
+}
+
+.multi-select-empty {
+  color: var(--dark-color, #666);
+  padding: 6px 4px;
+}
+
+.blog-filter.navy-text,
+.blog-filter.navy-text * {
+  color: var(--navy-1);
+}

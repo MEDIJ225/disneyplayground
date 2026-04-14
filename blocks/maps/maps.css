@@ -1,0 +1,45 @@
+.maps {
+  > div {
+    > div {
+        p {
+            display: none;
+        }
+    }
+  }
+
+  .mapZoomIcon {
+    width: 37px;
+    height: 37px;
+    background-position: 0 -26px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: block;
+  }
+
+  .map-canvas {
+    height: 210px;
+    width: 210px;
+  }
+
+  .map-titlespan {
+    font-size: var(--body-font-size-m);
+    color: var(--black);
+    line-height: var(--body-font-size-l);
+    margin-bottom: var(--spacing-xxs);
+    font-family: var(--font-family-heavy);
+  }
+
+  .gm-style {
+    .gm-fullscreen-control {
+      min-width: 40px;
+    }
+
+    button {
+      min-width: 40px;
+      &.gm-ui-hover-effect {
+        min-width: 40px;
+      }
+    }
+  }
+}

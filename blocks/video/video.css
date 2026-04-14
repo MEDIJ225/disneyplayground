@@ -1,0 +1,70 @@
+@import url('../../styles/share.css');
+
+.video {
+  width: 100%;
+}
+
+.video .video-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.video .video-wrapper video {
+  width: 100%;
+  height: auto;
+  display: block;
+  background: #000;
+  padding-bottom: var(--spacing-l);
+  max-height: 400px;
+}
+
+.video .video-wrapper.youtube-video {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+  height: 0;
+  margin-bottom: var(--spacing-l);
+}
+
+.video .video-wrapper.youtube-video iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  background: #000;
+}
+
+.video .video-share {
+  position: absolute;
+  right: var(--spacing-m);
+  bottom: var(--spacing-xxs);
+  background: rgb(0 0 0 / 60%);
+  color: var(--white);
+  padding: var(--spacing-xxs) var(--spacing-xxs) var(--spacing-xxs) var(--spacing-xs);
+  border-radius: 999px;
+}
+
+.video .video-wrapper.youtube-video .video-share {
+  bottom: var(--spacing-m);
+}
+
+.video .video-share .share-tooltip {
+  right: 0;
+  top: auto;
+  bottom: calc(100% + var(--spacing-xxs));
+}
+
+
+.sr-only {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}

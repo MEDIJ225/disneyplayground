@@ -1,0 +1,82 @@
+.promo-carousel {
+  margin: 0 auto;
+  margin-bottom: 0;
+}
+
+.promo-container {
+  display: grid;
+  grid-template-columns: repeat(2, 150px);
+  gap: var(--spacing-l);
+  justify-content: center;
+}
+
+.promo-slide-group {
+  display: contents;
+}
+
+.promo-slide {
+  width: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (width >= 600px) and (width < 1024px) {
+  .promo-container {
+    grid-template-columns: repeat(5, 120px);
+    gap: var(--spacing-m);
+  }
+
+  .promo-slide {
+    width: 120px;
+  }
+}
+
+@media (width >= 1024px) {
+  .promo-carousel {
+    overflow: hidden;
+    max-width: calc(150px * 5 + 64px * 4);
+  }
+
+  .promo-container {
+    display: flex;
+    grid-template-columns: none;
+    gap: 0;
+    justify-content: initial;
+    transition: transform 0.5s ease;
+  }
+
+  .promo-slide-group {
+    display: flex;
+    gap: var(--spacing-xxxxl);
+    flex: 0 0 calc(150px * 5 + 64px * 4);
+    justify-content: center;
+  }
+
+  .promo-slide {
+    flex: 0 0 auto;
+    width: 150px;
+  }
+}
+
+.promo-slide a {
+  display: block;
+  width: 100%;
+  text-decoration: none;
+}
+
+.promo-slide img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  object-position: center;
+  filter: grayscale(100%);
+  opacity: 0.6;
+  transition: filter 0.3s ease, opacity 0.3s ease;
+}
+
+.promo-slide a:hover img,
+.promo-slide img:hover {
+  filter: grayscale(0%);
+  opacity: 1;
+}

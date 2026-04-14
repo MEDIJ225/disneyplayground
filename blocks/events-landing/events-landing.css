@@ -1,0 +1,19 @@
+.events-landing .section:last-child {
+  margin-bottom: 0;
+}
+
+.events-landing .event-grid {
+  margin: 0;
+}
+
+.events-landing .section {
+  margin-bottom: var(--spacing-xxxxl);
+}
+
+.events-landing .event-header-wrapper {
+  margin: 0;
+}
+
+.events-landing .event-header-wrapper + .event-grid-wrapper:has(.empty) + .event-header-wrapper {
+  margin-top: var(--spacing-xl);
+}

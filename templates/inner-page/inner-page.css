@@ -1,0 +1,23 @@
+main {
+    box-shadow: rgb(150, 147, 150) 0 0 5px;
+    border-radius: 12px;
+    padding: 16px 0px 12px 0px;
+    max-width: 958px;
+    margin: 30px auto !important;
+}
+
+@media (width <=1024px) {
+     main{
+       width: 90%;
+    }
+}
+@media (width <=768px) {
+    main{
+        box-shadow: unset;
+        border-radius: unset;
+        padding: 16px 0px 12px 0px;
+        width: unset;
+        margin: unset !important;
+        background: #f4f4f2;
+    }
+}

@@ -1,0 +1,200 @@
+/* download-list Block - Card Layout */
+
+.download-list.block .download-list {
+	border: 0;
+	padding: var(--spacing-xs) 0;
+}
+
+.download-list.block .download-item {
+	display: flex;
+	overflow: hidden;
+	box-shadow: 0 2px 3px 0 rgb(0 0 0 / 27%);
+	width: 100%;
+	margin: 25px 0;
+	align-items: center;
+}
+
+.download-list.block .dl-left,
+.download-list.block .dl-middle,
+.download-list.block .dl-right {
+	position: relative;
+	display: flex;
+}
+
+.download-list.block .dl-left {
+	background: var(--light-gray-2);
+	text-align: center;
+	width: 24%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	gap: 4px;
+}
+
+.download-list.block .dl-primary {
+	color: var(--navy);
+	font-family: var(--body-font-family);
+}
+
+.download-list.block .dl-secondary {
+	font-size: var(--body-font-size-s);
+	line-height: 19px;
+	color: #42526e;
+	font-weight: 500;
+	letter-spacing: 0.2px;
+}
+
+.download-list.block .dl-middle {
+	color: var(--navy);
+	font-size: var(--heading-font-size-m);
+	line-height: 28px;
+	padding-left: var(--spacing-xl);
+	width: 52%;
+	height: 100%;
+	text-align: left;
+}
+
+.download-list.block .dl-right {
+	padding-left: var(--spacing-xl);
+	width: 28%;
+	text-align: left;
+}
+
+.download-list.block .dl-divider {
+	display: flex;
+	width: 1px;
+	height: 55px;
+	background: #979797;
+	float: right;
+	margin-right: 0%;
+}
+
+.download-list .icon {
+	padding-left: var(--spacing-xl);
+	font-size: var(--icon-size-s);
+}
+
+.download-list.block .dl-download-label {
+	font-weight: 500;
+	font-size: var(--body-font-size-m);
+	color: var(--link-color);
+	text-decoration: none;
+	transition: text-decoration 0.2s;
+	margin-left: 8px;
+}
+
+.section.download-list-container {
+	margin: unset;
+
+	@media (width > 1024px) {
+		margin: 0 15%;
+	}
+}
+
+.download-list .dl-right a {
+	display: flex;
+	align-items: center;
+	text-decoration: none;
+}
+
+.download-list.block .download-item:last-child {
+	margin-bottom: 0;
+}
+
+.download-list .dl-right a:hover,
+.dl-right a:hover .dl-download-label,
+.dl-right a:hover .icon {
+	color: #2a6496 !important;
+	cursor: pointer;
+}
+
+.download-list.navy-text,
+.download-list.navy-text *{
+	 color: var(--navy-1);
+
+  }
+
+@media (width < 1024px) {
+	.download-list-wrapper {
+		margin: auto !important;
+	}
+
+	.download-list.block .dl-middle {
+		font-size: var(--body-font-size-m);
+		height: auto;
+		padding: 18px 0;
+		display: table-cell;
+		float: none;
+		line-height: 20px;
+		padding-left: 20px;
+		width: calc(100% - 148px);
+	}
+
+	.download-list.block .download-item {
+		display: table;
+		grid-template-rows: auto auto;
+		position: relative;
+	}
+
+	.download-list.block .dl-left {
+		background: var(--light-gray-2);
+		width: 100%;
+		text-align: left;
+		padding: 0 19px;
+		display: table-caption;
+	}
+
+	.download-list.block .dl-title {
+		font-size: var(--body-font-size-xl);
+		line-height: 22px;
+		padding: 0 15px;
+
+	}
+
+	.download-list.block .dl-miles {
+		font-size: var(--body-font-size-s);
+		margin-top: 2px;
+		font-weight: 600;
+		padding-left: 15px;
+	}
+
+	.download-list.block .dl-right {
+		display: table-cell;
+		float: none;
+		text-align: center;
+		padding: 0 var(--spacing-s);
+		width: 142px;
+		min-width: 142px;
+		vertical-align: middle;
+	}
+
+	.download-list.block .dl-divider {
+		height: 30px;
+		margin-right: 0%;
+	}
+
+	.download-list .icon {
+		padding-left: 20px;
+	}
+
+	.download-list .icon__pdf::before {
+		font-size: var(--heading-font-size-l);
+	}
+
+	.download-list.block .icon__pdf.icon.icon-pdf {
+		line-height: 25px;
+	}
+
+	.download-list.block .dl-download-label {
+		font-size: var(--body-font-size-m);
+		margin-left: 0;
+	}
+
+	.download-list.block .dl-right a {
+		justify-content: center;
+		height: 100%;
+		align-items: center;
+	}
+
+
+}

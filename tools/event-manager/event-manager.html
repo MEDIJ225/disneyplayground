@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Event Manager - DA App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="icon" href="data:,">
+    <link rel="stylesheet" href="./event-manager.css">
+    <link rel="stylesheet" href="/styles/fonts.css">
+    <link rel="stylesheet" href="/styles/icons.css">
+    <script src="https://da.live/nx/utils/sdk.js" type="module"></script>
+    <script src="./event-manager.js" type="module"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="header-icon">
+          <span class="icon icon__running"></span>
+        </div>
+        <h1>runDisney Event Manager</h1>
+        <p>Create and manage events with categories</p>
+        
+        <div class="header-nav">
+          <button type="button" class="nav-btn active" id="listViewBtn">Manage Events</button>
+          <button type="button" class="nav-btn" id="createViewBtn">Create Event</button>
+        </div>
+      </div>
+      
+      <div class="form-container" style="display: none;">
+        <form id="eventForm">
+          <div class="form-group">
+            <label for="eventName">Event Name *</label>
+            <input type="text" id="eventName" name="eventName" required>
+            <small class="helper-text">The display name for the event (e.g., "Disney Wine & Dine Half Marathon Weekend")</small>
+          </div>
+          
+          <div class="form-group">
+            <label for="eventId">Event ID *</label>
+            <input type="text" id="eventId" name="eventId" placeholder="e.g., 705886c91e6a39062d59" required>
+            <small class="helper-text">Unique identifier for the event (alphanumeric string)</small>
+          </div>
+          
+          <div class="form-group">
+            <label for="eventPath">Event Path *</label>
+            <input type="text" id="eventPath" name="eventPath" placeholder="/events/disneyworld/event-name" required>
+            <small class="helper-text">URL path where the event page will be accessible</small>
+          </div>
+          
+          <div class="form-group">
+            <label for="eventStartDate">Event Start Date *</label>
+            <input type="date" id="eventStartDate" name="eventStartDate" required>
+            <small class="helper-text">The main start date for the event</small>
+          </div>
+          
+          <div class="form-group">
+            <label for="eventDescription">Event Description</label>
+            <textarea id="eventDescription" name="eventDescription" placeholder="Describe the event..."></textarea>
+            <small class="helper-text">Optional description of the event</small>
+          </div>
+          
+          <div class="form-group">
+            <label for="eventLogo">Event Logo</label>
+            <div class="image-upload" id="imageUpload">
+              <p>Click to upload or drag and drop an image</p>
+              <input type="file" id="logoFile" accept="image/*" style="display: none;">
+            </div>
+            <img id="logoPreview" class="image-preview" style="display: none;">
+            <small class="helper-text">Optional logo image for the event (JPG, PNG, GIF)</small>
+          </div>
+          
+          <div class="form-group">
+            <label for="eventSponsors">Event Sponsors</label>
+            <div class="sponsors-container" id="sponsorsContainer">
+              <div class="sponsors-loading">Loading sponsors...</div>
+            </div>
+            <small class="helper-text">Select one or more sponsors for this event</small>
+          </div>
+          
+          <div class="categories-section">
+            <h3>Event Categories</h3>
+            <p class="helper-text">Add different categories for this event (e.g., Half Marathon, 10K, 5K) with their own pricing and registration links. Each category needs a name and the Haku ID associated with it.</p>
+            <div id="categoriesContainer"></div>
+            <button type="button" class="btn add-category-btn" id="addCategoryBtn">+ Add Category</button>
+          </div>
+          
+          <div class="submit-section">
+            <button type="submit" class="btn submit-btn" id="submitBtn">Create Event</button>
+            <div id="status" class="status" style="display: none;"></div>
+          </div>
+        </form>
+      </div>
+      
+      <div class="events-list-container" id="eventsListContainer">
+        <div class="list-header">
+          <h2>Existing Events</h2>
+          <div class="list-actions">
+            <button type="button" class="btn btn-secondary" id="refreshEventsBtn">Refresh</button>
+          </div>
+        </div>
+        <div class="events-list" id="eventsList">
+          <div class="loading">Loading events...</div>
+        </div>
+      </div>
+    </div>
+    
+    <div id="successModal" class="modal" style="display: none;">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 id="modalTitle">Success!</h3>
+          <button type="button" class="modal-close" id="modalClose">&times;</button>
+        </div>
+        <div class="modal-body">
+          <p id="modalMessage">Operation completed successfully!</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn" id="modalOkBtn">OK</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+

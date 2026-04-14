@@ -1,0 +1,228 @@
+.callout {
+  .callout-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--spacing-xxxl);
+    height: var(--spacing-xxxl);
+    flex-shrink: 0;
+
+    @media (width >= 1024px) {
+      width: var(--spacing-xxxxl);
+      height: var(--spacing-xxxxl);
+    }
+
+    .icon {
+      font-size: var(--icon-size-l);
+
+      @media (width >= 1024px) {
+        font-size: 4rem;
+      }
+    }
+
+    @media (width <= 767px) {
+      position: absolute;
+      margin-bottom: 10px;
+      padding-right: 20px;
+      top: 0;
+      left: 0;
+    }
+  }
+
+  .callout-clickable .callout-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xxs);
+
+    :is(h1, h2, h3, h4, h5, h6) {
+      margin: 0;
+      color: var(--navy);
+      font-size: var(--heading-font-size-s);
+      font-weight: 600;
+
+      @media (width >= 1024px) {
+        font-size: var(--heading-font-size-m);
+      }
+
+    }
+
+    h3 {
+        @media (width <=767px) {
+          padding-left: 40px;
+          display: block;
+          margin-bottom: 13px;
+          font-size: 24px;
+          margin-top: -4px;
+        }
+      }
+
+    p {
+      margin: 0;
+      color: var(--navy);
+      font-size: var(--body-font-size-s);
+      line-height: 1.5;
+
+      @media (width >= 1024px) {
+        font-size: var(--body-font-size-m);
+      }
+
+       strong {
+        @media (width <=767px) {
+          padding-left: 40px;
+          display: block;
+          margin-bottom: 13px;
+          font-size: 24px;
+          margin-top: -4px;
+        }
+      }
+    }
+  }
+
+  .callout-chevron {
+    color: var(--gray);
+    font-size: var(--icon-size);
+    flex-shrink: 0;
+
+    @media (width >= 1024px) {
+      font-size: var(--icon-size-l);
+    }
+  }
+
+  .callout-clickable {
+    display: flex;
+    align-items: center;
+    background-color: var(--white);
+    border-radius: var(--spacing-xxs);
+    padding: var(--spacing-s);
+    box-shadow: 0 2px var(--spacing-xxs) rgb(0 0 0 / 10%);
+    gap: var(--spacing-s);
+    margin: var(--spacing-m) 0;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+    @media (width <=767px) {
+      position: relative;
+      padding-right: 2px;
+    }
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px var(--spacing-s) rgb(0 0 0 / 15%);
+      color: var(--link-color);
+
+      p,
+      .icon,
+      :is(h1, h2, h3, h4, h5, h6) {
+        color: var(--link-color);
+      }
+    }
+
+    &:active {
+      transform: translateY(0);
+    }
+
+    @media (width >= 1024px) {
+      padding: var(--spacing-m);
+      gap: var(--spacing-m);
+    }
+  }
+
+  &.navy-text{
+    & .callout-clickable .callout-content {
+      :is(h1, h2, h3, h4, h5, h6) {
+        color: var(--navy-1);
+      }
+
+      p {
+        color: var(--navy-1);
+      }
+    }
+
+    &.callout-clickable {
+      color: var(--navy-1);
+    }
+  }
+  
+}
+
+/* With Image Variant */
+.callout.plain {
+  margin: auto;
+
+  .callout-content > div {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    align-items: center;
+    font-family: var(--cta-font-family);
+    border-bottom: 1px solid var(--border-color);
+
+    > p:has(picture, img) {
+      grid-column: 1;
+      grid-row: 1 / span 2;
+      margin: 0 0 5px 50px;
+
+      picture, img {
+        width: 110px;
+        height: auto;
+        display: block;
+      }
+    }
+
+    > p:has(picture, img) + * {
+      grid-column: 2;
+      color: var(--tab-icon-active-background);
+      line-height: 1.1;
+      margin: 15px 0 0;
+      font-family: var(--cta-font-family);
+      font-weight: normal;
+    }
+
+    > p:not(:has(picture, img)) {
+      grid-column: 2;
+      align-self: baseline;
+      color: var(--cta-text-color);
+      line-height: 1.4;
+      font-size: 12px;
+      margin: 0 0 18px;
+
+      a {
+        font-weight: bold;
+
+        &:hover {
+          text-decoration: none;
+        }
+      }
+    }
+  }
+
+  /* Mobile Adjustments */
+  @media (width <= 568px) {
+    .callout-content > div {
+      grid-template-columns: 110px 1fr; 
+      grid-template-rows: auto auto;
+      gap: 12px;
+
+      > p:has(picture, img) {
+        grid-column: 1;
+        grid-row: 1;
+        width: 80px;
+        margin-left: 12px;
+        img { width: 100%; }
+      }
+
+      > p:has(picture, img) + * {
+        grid-column: 2;
+        grid-row: 1;
+        align-self: start;
+        margin-top: 30px;
+      }
+
+      > p:not(:has(picture, img)) {
+        grid-column: 1 / span 2;
+        grid-row: 2;
+        margin: 0 12px 18px 0;
+      }
+    }
+  }
+}

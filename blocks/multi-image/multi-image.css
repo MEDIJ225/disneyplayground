@@ -1,0 +1,29 @@
+/* base layout */
+.multi-image {
+  width: 100%;
+  display: block;
+  padding-bottom: 16px;
+}
+
+.multi-image picture,
+.multi-image img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.multi-image img {
+  object-fit: contain;
+}
+
+/* double layout */
+.multi-image.double > div {
+  display: flex;
+  width: 100%;
+  gap: 16px; 
+  padding: 8px;
+}
+
+.multi-image.double > div > div {
+  flex: 0 0 50%;
+}

@@ -1,0 +1,18 @@
+.author-guide-template {
+  & main {
+    >.section {
+      &.primary-intro p {
+        text-align: left;
+      }
+
+      &:not(.hero-container)>.default-content-wrapper {
+        :is(h1, h2, h3, h4, h5, h6),
+        .primary-link-container,
+        p:has(.icon),
+        .button-container {
+          text-align: left;
+        }
+      }
+    }
+  }
+}

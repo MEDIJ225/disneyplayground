@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head></head>
+<body>
+    <script>
+        /* parse query string into 'query' object where each parameter is a property name */
+        var queryString = window.location.search;
+        var query = {};
+        var pairs = (queryString[0] === '?' ? queryString.substr(1) : queryString).split('&');
+        for (var i = 0; i < pairs.length; i++) {
+            var pair = pairs[i].split('=');
+            query[decodeURIComponent(pair[0])] = decodeURIComponent(pair[1] || '');
+        }
+        // create script element to inject with responder script
+        var script = document.createElement('script');
+        // set default responder script
+        if (query.environment) {
+            switch (query.environment) {
+                case 'QA':
+                    script.src = 'https://qa.cdn.registerdisney.go.com/v4/responder.js'
+                    break;
+                case 'STAGE':
+                    script.src = 'https://stg.cdn.registerdisney.go.com/v4/responder.js'
+                    break;
+                case 'VALID':
+                    script.src = 'https://val.cdn.registerdisney.go.com/v4/responder.js'
+                    break;
+                case 'PROD':
+                    script.src = 'https://cdn.registerdisney.go.com/v4/responder.js'
+                    break;
+            }
+        } else {
+            console.log('ERROR: environment not found');
+        }
+
+        // inject script into page
+        document.body.appendChild(script);
+    </script>
+</body>
+</html>

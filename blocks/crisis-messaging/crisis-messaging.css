@@ -1,0 +1,93 @@
+.crisis-messaging {
+    clear: both;
+    max-width: 845px;
+    margin: 0 auto;
+    background-color: var(--background-color);
+    padding: var(--body-font-size-xs);
+    text-align: left;
+    overflow: auto;
+    position: relative;
+    color: var(--black);
+    font-family: var(--body-font-family);
+
+    & > div:first-child {
+        display: flex;
+    }
+
+    ul, p {
+        font-size: var(--body-font-size-m);
+        color: var(--black);
+        line-height: 18px;
+        margin-bottom: 8px;
+        font-family: var(--body-font-family);
+        font-weight: normal;
+    }
+
+    a {
+        color: var(--black);
+    }
+
+    i.icon {
+        color: var(--error);
+    }
+
+    .close-button {
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin: var(--spacing-s);
+        min-width: unset;
+        border: none;
+        border-radius: 0;
+        padding: 0;
+        background-color: transparent;
+        color: var(--text-color);
+        line-height: 0;
+
+        .icon.icon-close {
+            content: '';
+            width: 24px;
+            height: 24px;
+            background: var(--navy);
+            border-radius: 50%;
+            padding: 4px;
+
+            &::before,
+            &::after {
+                content: '';
+                box-sizing: border-box;
+                display: block;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%) rotate(45deg);
+                width: 24px;
+                height: 2px;
+                border-radius: 2px;
+                background-color: currentcolor;
+                background-color: #fff;
+            }
+
+            &::before {
+                transform: translate(-50%, -50%) rotate(45deg);
+            }
+
+            &::after {
+                transform: translate(-50%, -50%) rotate(-45deg);
+            }
+        }
+    }
+
+    @media (width <= 768px) and (width >= 320px) {
+        width: 95%;
+
+        .close-button { 
+          margin: unset;
+          margin-top: 25px;
+        }
+
+        p {
+          width: 95%;
+        }
+    }
+}
