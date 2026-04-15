@@ -1,0 +1,1 @@
+{"version":3,"file":"wdpr-chip.model.js","sourceRoot":"","sources":["../../../src/components/wdpr-chip/wdpr-chip.model.ts"],"names":[],"mappings":"","sourcesContent":["export type ChipStatus = 'selected' | 'unselected';\n"]}

@@ -1,0 +1,13 @@
+:host {
+  position: relative;
+  display: block;
+  width: fit-content;
+}
+
+:host(.full-width) {
+  width: 100%;
+}
+
+.content-wrapper {
+  display: block;
+}

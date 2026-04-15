@@ -1,0 +1,1 @@
+{"version":3,"file":"wdpr-tile.model.js","sourceRoot":"","sources":["../../../src/components/wdpr-tile/wdpr-tile.model.ts"],"names":[],"mappings":"","sourcesContent":["export type TileVisualContent = 'icon' | 'media' | 'avatarGroup';\nexport type TileOrientation = 'horizontal' | 'vertical';\nexport type TileBackgroundIcon = 'circle' | 'square' | 'none';\n"]}

@@ -1,0 +1,23 @@
+/* Base env badge */
+.env-badge::part(surface) {
+  color: var(--color-text-inverse);
+  border-radius: 4px;
+}
+
+/* LATEST */
+.env-badge-latest::part(surface) {
+  background: var(--color-aqua-700);
+  border-color: var(--color-aqua-700);
+}
+
+/* STAGE */
+.env-badge-stage::part(surface) {
+  background: var(--color-gold-600);
+  border-color: var(--color-gold-600);
+}
+
+/* PROD */
+.env-badge-prod::part(surface) {
+  background: var(--color-blue-800);
+  border-color: var(--color-blue-800);
+}

@@ -1,0 +1,1 @@
+{"version":3,"file":"wdpr-icon-library.model.js","sourceRoot":"","sources":["../../../src/components/wdpr-icon-library/wdpr-icon-library.model.ts"],"names":[],"mappings":"","sourcesContent":["export type IconLibrarySize = 'xxsmall' | 'xsmall' | 'small' | 'medium' | 'medium-alt' | 'large' | 'xlarge';\n"]}

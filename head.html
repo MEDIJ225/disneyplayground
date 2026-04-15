@@ -1,4 +1,27 @@
-<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<!-- WDPR Vista Theme -->
+<link
+  rel="stylesheet"
+  href="/public/ra-web-components/dist/wdpr-ra-web-components/global/themes/parks-now-theme.css"
+/>
+<link
+  rel="stylesheet"
+  href="/public/ra-web-components/dist/wdpr-ra-web-components/global/styles.css"
+/>
+
+<!-- WDPR Web Components  -->
+<script type="module">
+  (async () => {
+    const { defineCustomElement } =
+      await import("/public/ra-web-components/loader/index.es2017.js");
+    if (!window.customElements.get("wdpr-button")) {
+      defineCustomElement(window);
+    }
+  })();
+</script>
+
+<!-- AEM Edge Delivery Services -->
 <script src="/scripts/aem.js" type="module"></script>
 <script src="/scripts/scripts.js" type="module"></script>
-<link rel="stylesheet" href="/styles/styles.css"/>
+<link rel="stylesheet" href="/styles/styles.css" />

@@ -1,0 +1,2 @@
+import{r as e,a,h as s}from"./p-CykM8GCN.js";const r=class{constructor(a){e(this,a)}get el(){return a(this)}cellColumns=1;render(){return s("div",{key:"d2f1a6faa6c465bef0b9de567cb314bb63ca3d9b",class:t,style:{gridTemplateColumns:`repeat(${this.cellColumns}, 1fr)`}},s("slot",{key:"f97dac5f9bad75bd57c97ffa8ecfa130236aa289"}))}};const t="grid gap-100";export{r as wdpr_tile_cell};
+//# sourceMappingURL=p-1bd31d0c.entry.js.map

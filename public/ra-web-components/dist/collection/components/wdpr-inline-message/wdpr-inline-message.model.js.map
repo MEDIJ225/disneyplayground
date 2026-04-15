@@ -1,0 +1,1 @@
+{"version":3,"file":"wdpr-inline-message.model.js","sourceRoot":"","sources":["../../../src/components/wdpr-inline-message/wdpr-inline-message.model.ts"],"names":[],"mappings":"","sourcesContent":["export type InlineMessageVariant = 'success' | 'informational' | 'warning' | 'error';\nexport type InlineMessageSize = 'default' | 'small';\n"]}

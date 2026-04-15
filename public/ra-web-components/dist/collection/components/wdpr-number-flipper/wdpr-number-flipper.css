@@ -1,0 +1,33 @@
+.overlay-top,
+.overlay-bottom {
+  backface-visibility: hidden;
+}
+
+.overlay.flip .overlay-top {
+  animation: flip-top 500ms linear;
+}
+.overlay.flip .overlay-bottom {
+  animation: flip-bottom 500ms linear;
+}
+
+@keyframes flip-top {
+  0% {
+    transform: rotateX(0deg);
+    filter: brightness(1);
+  }
+  50%,
+  100% {
+    transform: rotateX(-90deg);
+    filter: brightness(0.7);
+  }
+}
+
+@keyframes flip-bottom {
+  0%,
+  50% {
+    transform: rotateX(90deg);
+  }
+  100% {
+    transform: rotateX(0deg);
+  }
+}

@@ -1,0 +1,2 @@
+const n=768;const o=1024;const t=1880;function w(){return window.innerWidth<n}function i(){return window.innerWidth>=n&&window.innerWidth<o}function r(){return window.innerWidth>=o&&window.innerWidth<t}function c(){return window.innerWidth>n}export{i as a,r as b,c,w as i};
+//# sourceMappingURL=p-B3zeU0l2.js.map

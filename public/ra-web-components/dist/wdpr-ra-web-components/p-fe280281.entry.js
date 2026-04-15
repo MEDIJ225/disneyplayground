@@ -1,0 +1,2 @@
+import{r as e,a as t,h as a}from"./p-CykM8GCN.js";const s=class{constructor(t){e(this,t)}get el(){return t(this)}panelIndex;active=false;render(){const e=`tab-content-${this.panelIndex}`;const t=`tab-label-${this.panelIndex}`;return a("div",{key:"f6c49189bb53c3c001337d1d5568cb4adcb6ae53",id:e,role:"tabpanel","aria-labelledby":t,hidden:!this.active},a("slot",{key:"635b3fdf3b8ebda7e00677432154cfa40944555b"}))}};export{s as wdpr_tab_panel};
+//# sourceMappingURL=p-fe280281.entry.js.map

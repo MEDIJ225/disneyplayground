@@ -1,0 +1,1 @@
+{"version":3,"file":"wdpr-dual-text-field.model.js","sourceRoot":"","sources":["../../../src/components/wdpr-dual-text-field/wdpr-dual-text-field.model.ts"],"names":[],"mappings":"","sourcesContent":["export type DualTextFieldRequirementIndicator = 'required' | 'optional' | 'none';\n"]}

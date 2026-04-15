@@ -1,0 +1,1 @@
+{"version":3,"file":"wdpr-calendar.model.js","sourceRoot":"","sources":["../../../src/components/wdpr-calendar/wdpr-calendar.model.ts"],"names":[],"mappings":"","sourcesContent":["export type CalendarMode = 'single' | 'range';\nexport type CalendarVariant = 'single' | 'double' | 'swipe' | 'fourMonth';\nexport type CalendarSize = 'xsmall' | 'small' | 'medium';\n"]}

@@ -1,0 +1,1 @@
+{"version":3,"file":"wdpr-number-flipper.model.js","sourceRoot":"","sources":["../../../src/components/wdpr-number-flipper/wdpr-number-flipper.model.ts"],"names":[],"mappings":"","sourcesContent":["export type NumberFlipperSizes = 'small' | 'medium' | 'large';"]}

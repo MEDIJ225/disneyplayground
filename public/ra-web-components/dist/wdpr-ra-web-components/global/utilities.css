@@ -1,0 +1,52 @@
+@utility border-* {
+  border-width: --value(--stroke-*);
+}
+
+@utility border-x-* {
+  border-inline-width: --value(--stroke-*);
+}
+
+@utility border-y-* {
+  border-block-width: --value(--stroke-*);
+}
+
+@utility border-t-* {
+  border-top-width: --value(--stroke-*);
+}
+
+@utility outline-* {
+  outline-width: --value(--stroke-*);
+}
+
+@utility elevation-* {
+  box-shadow: --value(--elevation-*);
+}
+
+@utility text-stroke-shadow {
+  --stroke-color: var(--color-stroke-actionable-hover, rgba(0, 0, 0, 0.6));
+  text-shadow:
+    -1px -1px 0 var(--stroke-color),
+    1px -1px 0 var(--stroke-color),
+    -1px 1px 0 var(--stroke-color),
+    1px 1px 0 var(--stroke-color);
+}
+
+@utility text-stroke-shadow-active {
+  --stroke-color: var(--color-stroke-inverse, #ffffff);
+  text-shadow:
+    -1px -1px 0 var(--stroke-color),
+    1px -1px 0 var(--stroke-color),
+    -1px 1px 0 var(--stroke-color),
+    1px 1px 0 var(--stroke-color);
+}
+
+@utility no-scrollbar {
+  /* Firefox */
+  scrollbar-width: none;
+  /* IE and Edge */
+  -ms-overflow-style: none;
+  /* Chrome, Safari, and Opera */
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}

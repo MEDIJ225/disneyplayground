@@ -1,0 +1,1 @@
+{"version":3,"file":"wdpr-application-header.model.js","sourceRoot":"","sources":["../../../src/components/wdpr-application-header/wdpr-application-header.model.ts"],"names":[],"mappings":"","sourcesContent":["export type Environment = 'PROD' | 'LATEST' | 'STAGE';\nexport type Site = 'WDW' | 'DLR' | 'DLP';\n\n"]}

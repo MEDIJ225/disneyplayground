@@ -1,0 +1,2 @@
+const t='<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.6001 0V24H20.4001V0H3.6001ZM18.0001 21.6H6.0001V2.4H18.0001V21.6Z" fill="#445582"/></svg>';export{t as svg};
+//# sourceMappingURL=p-BKR20Qra.js.map

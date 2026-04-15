@@ -1,0 +1,1 @@
+{"version":3,"file":"wdpr-time-unit.model.js","sourceRoot":"","sources":["../../../../src/components/wdpr-detailed-countdown-timer/wdpr-time-unit/wdpr-time-unit.model.ts"],"names":[],"mappings":"","sourcesContent":["export type CountdownVariant = 'primary' | 'secondary';\n"]}

@@ -1,0 +1,1 @@
+{"version":3,"file":"wdpr-four-month-calendar.model.js","sourceRoot":"","sources":["../../../../src/components/wdpr-calendar/wdpr-four-month-calendar/wdpr-four-month-calendar.model.ts"],"names":[],"mappings":"","sourcesContent":["export type EventType = CustomEvent<{ date: string }>;\n\n"]}

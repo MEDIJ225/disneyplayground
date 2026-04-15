@@ -880,6 +880,7 @@ export async function loadTemplate(doc, templateName) {
  */
 async function loadEager(doc) {
   document.documentElement.lang = 'en';
+  document.body.setAttribute('data-theme', 'vista/parks-now');
   decorateTemplateAndTheme();
   const main = doc.querySelector('main');
 

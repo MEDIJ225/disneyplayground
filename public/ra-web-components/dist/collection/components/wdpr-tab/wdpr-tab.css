@@ -1,0 +1,106 @@
+:host {
+  display: block;
+  background-color: transparent;
+  border: none;
+  padding: var(--theme-spacing-150); /* 12px */
+  margin: 0;
+  color: var(--theme-color-text-actionable-alt-default);
+  cursor: pointer;
+  border-bottom: var(--theme-stroke-050) /* 4px */ solid transparent;
+  transition: border-color 0.2s ease-in-out;
+}
+
+:host([grow]) {
+  flex: 1;
+}
+
+/* --- Hover (when it's not disabled) --- */
+:host(:not([disabled]):hover) {
+  color: var(--theme-color-text-actionable-alt-hover);
+}
+
+/* --- Focus / Active --- */
+:host(:not([disabled]):active) {
+  color: var(--theme-color-text-actionable-alt-selected);
+}
+
+:host([active]:not([disabled]):focus-visible) {
+  color: var(--theme-color-text-actionable-alt-selected);
+}
+
+:host(:not([disabled]):focus-visible) {
+  outline: none;
+  position: relative;
+  z-index: 1;
+}
+
+:host(:not([disabled]):focus-visible)::before {
+  content: '';
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  right: -3px;
+  bottom: -6px;
+  border: 3px solid var(--theme-color-surface-actionable-focus);
+  border-radius: 8px;
+  pointer-events: none;
+  z-index: -1;
+}
+
+:host([show-inactive-border-bottom]) {
+  border-bottom-color: var(--theme-color-stroke-neutral-light);
+}
+
+:host([active]) {
+  border-bottom-color: var(--theme-color-stroke-actionable-alt-pressed);
+  color: var(--theme-color-text-actionable-alt-default);
+}
+
+:host([active]:not([disabled]):hover) {
+  border-bottom-color: var(--theme-color-stroke-actionable-alt-hover);
+}
+
+:host([active]:not([disabled]):active) {
+  border-bottom-color: var(--theme-color-stroke-actionable-alt-selected);
+}
+
+:host([disabled]) {
+  color: var(--theme-color-text-disabled);
+  cursor: not-allowed;
+  pointer-events: none;
+  border-bottom-color: transparent;
+}
+
+.tab-content {
+  display: grid;
+  justify-items: center;
+  row-gap: var(--theme-spacing-100); /* 4px */
+}
+
+.tab-icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: var(--theme-spacing-250); /* 20px */
+}
+
+.secondary-label {
+  text-align: center;
+  font-family: var(--theme-font-family-default);
+  font-size: var(--theme-typography-font-size-component-small);
+  font-weight: var(--theme-typography-font-weight-component-alt);
+  line-height: var(--theme-typography-line-height-label-small);
+  font-style: normal;
+  letter-spacing: var(--theme-typography-letter-spacing-default);
+}
+
+.main-label {
+  text-align: center;
+  font-family: var(--theme-font-family-default);
+  font-size: var(--theme-typography-font-size-component-large);
+  font-weight: var(--theme-typography-font-weight-component-alt);
+  line-height: var(--theme-typography-line-height-component-medium);
+  font-style: normal;
+  letter-spacing: var(--theme-typography-letter-spacing-default);
+}

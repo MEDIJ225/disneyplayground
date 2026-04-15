@@ -1,0 +1,8 @@
+'use strict';
+
+const svg = "<svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M5.10518 0C2.59518 0 0.555176 2.02 0.555176 4.51V14.29C0.555176 16.78 2.59518 18.8 5.10518 18.8H12.4052L17.2152 23.61C17.4652 23.86 17.8052 24 18.1552 24C18.3252 24 18.4852 23.97 18.6652 23.9C19.1652 23.69 19.4852 23.21 19.4852 22.67V18.76C21.7152 18.47 23.4452 16.58 23.4452 14.29V4.51C23.4452 2.02 21.4052 0 18.8952 0H5.10518Z\" fill=\"#445582\"/></svg>";
+
+exports.svg = svg;
+//# sourceMappingURL=filled-chat-CKc0M8yW.js.map
+
+//# sourceMappingURL=filled-chat-CKc0M8yW.js.map

@@ -1,3 +1,7 @@
+* {
+    color: red !important;
+}
+
 .accordion {
   .accordion-item {
     margin-bottom: 0;

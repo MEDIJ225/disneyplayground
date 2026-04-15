@@ -1,0 +1,85 @@
+:host {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: var(--theme-spacing-100);
+
+  border: 1px solid var(--theme-color-stroke-actionable-alt-default);
+  border-radius: var(--theme-radius-150);
+  padding: var(--theme-spacing-150);
+
+  background-color: var(--theme-color-surface-default);
+  transition:
+    background-color 0.2s ease-in-out,
+    color 0.2s ease-in-out,
+    border-color 0.2s ease-in-out;
+
+  color: var(--theme-color-text-actionable-alt-default);
+  cursor: pointer;
+}
+
+:host(:not([disabled]):hover) {
+  color: var(--theme-color-text-actionable-alt-hover);
+  border-color: var(--theme-color-stroke-actionable-alt-hover);
+}
+
+:host(:not([disabled]):active) {
+  border-color: var(--theme-color-stroke-actionable-alt-pressed);
+  color: var(--theme-color-text-actionable-alt-pressed);
+}
+
+:host(:not([disabled]):focus-visible) {
+  outline: var(--theme-stroke-037) solid var(--theme-color-surface-actionable-focus);
+  outline-offset: 2px;
+}
+
+:host([active]) {
+  border-color: transparent;
+  background-color: var(--theme-color-surface-actionable-alt-selected);
+  color: var(--theme-color-text-inverse);
+}
+
+:host([active]:not([disabled]):hover) {
+  color: var(--theme-color-text-inverse);
+  background-color: var(--theme-color-surface-actionable-alt-hover);
+}
+
+:host([active]:not([disabled]):active) {
+  color: var(--theme-color-text-inverse);
+  background-color: var(--theme-color-surface-actionable-alt-pressed);
+}
+
+:host([active]) button.segmented-horizontal-tab-button:not(:disabled):focus-visible {
+  outline: 2px solid var(--theme-color-surface-actionable-focus);
+  outline-offset: 2px;
+}
+
+:host([disabled]) {
+  color: var(--theme-color-text-disabled);
+  border-color: var(--theme-color-stroke-actionable-alt-disabled);
+  cursor: not-allowed;
+}
+
+:host([active][disabled]) {
+  color: var(--theme-color-text-inverse);
+  background-color: var(--theme-color-surface-actionable-alt-disabled);
+}
+
+.segmented-horizontal-tab-icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: var(--theme-spacing-250); /* 20px */
+}
+
+.segmented-horizontal-tab-main-label {
+  text-align: center;
+  font-family: var(--theme-font-family-default);
+  font-size: var(--theme-typography-font-size-component-medium);
+  font-style: normal;
+  font-weight: var(--theme-typography-font-weight-component-default);
+  line-height: var(--theme-typography-line-height-component-medium-alt);
+  letter-spacing: var(--theme-typography-letter-spacing--05);
+}

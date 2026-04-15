@@ -1,0 +1,1 @@
+{"version":3,"file":"wdpr-nav-item-medium.model.js","sourceRoot":"","sources":["../../../src/components/wdpr-nav-item-medium/wdpr-nav-item-medium.model.ts"],"names":[],"mappings":"","sourcesContent":["export type NavItemMediumMediaSize = 'medium' | 'large' | 'xlarge';\nexport type NavItemMediumMediaType = 'image' | 'icon';\n\nexport type NavItemMediumClickDetail = string;\n"]}

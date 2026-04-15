@@ -1,0 +1,1 @@
+{"version":3,"file":"wdpr-checkbox.model.js","sourceRoot":"","sources":["../../../src/components/wdpr-checkbox/wdpr-checkbox.model.ts"],"names":[],"mappings":"","sourcesContent":["export type LabelPosition = 'leading' | 'trailing' | 'none';\nexport type IndeterminateClickCycle = 'checked' | 'unchecked';\n\nexport type AriaCheckedValue = 'true' | 'false' | 'mixed';\n"]}

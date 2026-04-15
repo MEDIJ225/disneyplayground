@@ -1,0 +1,12 @@
+{
+  "name": "@wdpr/ra-web-components/hydrate",
+  "description": "WdprRaWebComponents component hydration app.",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "exports": {
+    ".": {
+      "require": "./index.js",
+      "import": "./index.mjs"
+    }
+  }
+}

@@ -1,0 +1,1 @@
+{"version":3,"file":"environment-site-badge.model.js","sourceRoot":"","sources":["../../src/models/environment-site-badge.model.ts"],"names":[],"mappings":"","sourcesContent":["export type EnvironmentBadgeEnvironment = 'PROD' | 'LATEST' | 'STAGE';\nexport type EnvironmentBadgeSite = 'WDW' | 'DLR' | 'DLP';"]}

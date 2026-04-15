@@ -1,0 +1,1 @@
+{"version":3,"file":"wdpr-breadcrumb.model.js","sourceRoot":"","sources":["../../../src/components/wdpr-breadcrumb/wdpr-breadcrumb.model.ts"],"names":[],"mappings":"","sourcesContent":["export type BreadcrumbWrapMode = 'truncation' | 'line';\n"]}
