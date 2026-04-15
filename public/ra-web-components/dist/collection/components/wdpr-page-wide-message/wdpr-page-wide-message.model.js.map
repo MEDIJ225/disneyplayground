@@ -1,1 +1,0 @@
-{"version":3,"file":"wdpr-page-wide-message.model.js","sourceRoot":"","sources":["../../../src/components/wdpr-page-wide-message/wdpr-page-wide-message.model.ts"],"names":[],"mappings":"","sourcesContent":["export type A11yAriaRole = 'status' | 'alert';\n"]}

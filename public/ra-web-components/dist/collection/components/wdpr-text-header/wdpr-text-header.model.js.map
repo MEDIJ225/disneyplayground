@@ -1,1 +1,0 @@
-{"version":3,"file":"wdpr-text-header.model.js","sourceRoot":"","sources":["../../../src/components/wdpr-text-header/wdpr-text-header.model.ts"],"names":[],"mappings":"","sourcesContent":["export type TextHeaderSizes = 'small' | 'medium' | 'large';\n"]}

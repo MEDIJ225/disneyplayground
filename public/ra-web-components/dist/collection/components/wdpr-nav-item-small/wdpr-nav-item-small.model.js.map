@@ -1,1 +1,0 @@
-{"version":3,"file":"wdpr-nav-item-small.model.js","sourceRoot":"","sources":["../../../src/components/wdpr-nav-item-small/wdpr-nav-item-small.model.ts"],"names":[],"mappings":"","sourcesContent":["export type NavItemSmallVariant = 'label' | 'label-icon' | 'icon-avatar-aligned' | 'avatar';\n\nexport type NavItemClickDetail = string;\n"]}

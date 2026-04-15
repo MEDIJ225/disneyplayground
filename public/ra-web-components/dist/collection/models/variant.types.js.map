@@ -1,1 +1,0 @@
-{"version":3,"file":"variant.types.js","sourceRoot":"","sources":["../../src/models/variant.types.ts"],"names":[],"mappings":"","sourcesContent":["export type ButtonVariants = 'primary' | 'secondary' | 'secondary-alt' | 'tertiary' | 'tertiary-alt' | 'transactional' | 'text' | 'text-no-padding';\nexport type TextFieldVariants = 'error' | 'noError';\n"]}

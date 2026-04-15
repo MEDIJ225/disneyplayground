@@ -1,1 +1,0 @@
-{"version":3,"file":"wdpr-divider.model.js","sourceRoot":"","sources":["../../../src/components/wdpr-divider/wdpr-divider.model.ts"],"names":[],"mappings":"","sourcesContent":["export type DividerOrientation = 'horizontal' | 'vertical';\nexport type DividerAlignment = 'left' | 'center' | 'right';\nexport type DividerVariant = 'primary' | 'secondary';\n"]}

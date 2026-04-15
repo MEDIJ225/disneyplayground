@@ -1,1 +1,0 @@
-{"version":3,"file":"wdpr-nav-item-selectable.model.js","sourceRoot":"","sources":["../../../src/components/wdpr-nav-item-selectable/wdpr-nav-item-selectable.model.ts"],"names":[],"mappings":"","sourcesContent":["export interface NavItemSelectableDetail {\n  selected: boolean;\n  itemId?: string;\n  value?: string;\n}\n"]}

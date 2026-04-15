@@ -1,6 +1,0 @@
-const svg = "<svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M18.3299 7.23L11.0999 0V9.53L7.11992 5.54L5.66992 7L10.6599 12L5.67992 16.99L7.12992 18.45L11.0999 14.47V24L18.3299 16.77L13.5599 12L18.3299 7.23ZM13.1299 4.93L15.4399 7.24L13.1299 9.54V4.93ZM15.4399 16.75L13.1299 19.06V14.45L15.4399 16.75Z\" fill=\"#445582\"/></svg>";
-
-export { svg };
-//# sourceMappingURL=bluetooth-BJ5Co_ol.js.map
-
-//# sourceMappingURL=bluetooth-BJ5Co_ol.js.map

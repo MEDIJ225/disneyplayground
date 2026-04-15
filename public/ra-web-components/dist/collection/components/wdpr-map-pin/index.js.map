@@ -1,1 +1,0 @@
-{"version":3,"file":"index.js","sourceRoot":"","sources":["../../../src/components/wdpr-map-pin/index.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,UAAU,EAAE,MAAM,gBAAgB,CAAC","sourcesContent":["export { WdprMapPin } from './wdpr-map-pin';\nexport { MapPinStyle, MapPinLabel } from './wdpr-map-pin.model';\n"]}

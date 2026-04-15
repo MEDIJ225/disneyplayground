@@ -1,1 +1,0 @@
-{"version":3,"file":"wdpr-fab-menu-item.model.js","sourceRoot":"","sources":["../../../src/components/wdpr-fab-menu-item/wdpr-fab-menu-item.model.ts"],"names":[],"mappings":"","sourcesContent":["export interface FABMenuItemConfig {\n  id: number;\n  label: string;\n  icon?: string;\n  disabled?: boolean;\n  ariaLabel?: string;\n}\n"]}

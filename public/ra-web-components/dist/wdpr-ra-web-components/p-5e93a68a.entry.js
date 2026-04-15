@@ -1,2 +1,0 @@
-import{r,a as s,h as e}from"./p-CykM8GCN.js";const a=class{constructor(s){r(this,s)}get el(){return s(this)}steps=[];render(){return e("div",{key:"7135c6a3bde279b4c24bb0a182fff1bf243b7dc8",class:"flex gap-075",role:"group","aria-label":"Multi-step progress"},this.steps.map((r=>e("wdpr-linear-loader",{class:"flex-1",progress:r.progress??0,max:r.max??100}))))}};export{a as wdpr_multi_step_loader};
-//# sourceMappingURL=p-5e93a68a.entry.js.map

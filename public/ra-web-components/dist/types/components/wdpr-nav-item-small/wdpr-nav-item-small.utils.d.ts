@@ -1,5 +1,0 @@
-import { NavItemSmallVariant } from './wdpr-nav-item-small.model';
-export declare const getLabelClass: (colorClass: string, allowBoldText: boolean) => string;
-export declare const getColorClass: (disabled: boolean, isInverse: boolean) => "text-text-actionable-alt-disabled cursor-not-allowed" | "text-text-actionable-inverse-disabled group-hover:text-text-actionable-inverse-disabled group-active:text-text-actionable-inverse-disabled cursor-not-allowed" | "text-text-actionable-inverse-default group-hover:text-text-actionable-inverse-hover group-active:text-text-actionable-inverse-pressed" | "text-text-actionable-alt-default group-hover:text-text-actionable-alt-hover group-active:text-text-actionable-alt-pressed";
-export declare const getContainerClass: (variant: NavItemSmallVariant, isInverse: boolean) => string;
-export declare const containerBaseClass = "\n  flex justify-between rounded-050 group cursor-pointer\n  border-012 border-solid border-transparent mx-025\n  focus-visible:outline-stroke-actionable-focused\n  focus-visible:outline-solid\n  focus-visible:outline-offset-[1px]\n  focus-visible:outline-025\n";

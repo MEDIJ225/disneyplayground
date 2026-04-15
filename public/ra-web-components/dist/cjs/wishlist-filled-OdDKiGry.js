@@ -1,8 +1,0 @@
-'use strict';
-
-const svg = "<svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M12.01 5.85998C14.97 -0.340015 24.39 2.24998 23.45 9.37998C22.9 13.58 13.88 21.63 11.99 21.63C10.1 21.63 1.15995 13.25 0.559951 9.33998C-0.530049 2.20998 9.18995 -0.0900149 12.01 5.85998Z\" fill=\"#445582\"/></svg>";
-
-exports.svg = svg;
-//# sourceMappingURL=wishlist-filled-OdDKiGry.js.map
-
-//# sourceMappingURL=wishlist-filled-OdDKiGry.js.map

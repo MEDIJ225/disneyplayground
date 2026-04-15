@@ -1,7 +1,0 @@
-:host {
-  display: inline-block;
-}
-
-::slotted(*) {
-  width: 100%;
-}

@@ -1,2 +1,0 @@
-import{r as t,h as r}from"./p-CykM8GCN.js";import"./p-CXZGMLMW.js";import{b as e}from"./p-CF3xLdU_.js";const a=class{constructor(r){t(this,r)}dotStyle="";get _dotClasses(){const t="h-[5px] w-[5px] rounded-pill bg-surface-actionable-alt-selected";return e.twMerge(t,this.dotStyle)}render(){return r("div",{key:"8b0fc3a7979c5634b6e36d59eb9cf29a376aae36",class:this._dotClasses,part:"calendar-dot","aria-hidden":"true"})}};export{a as wdpr_calendar_dot};
-//# sourceMappingURL=p-488d2902.entry.js.map

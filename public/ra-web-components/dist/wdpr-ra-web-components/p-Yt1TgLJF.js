@@ -1,2 +1,0 @@
-function i(i){return i.hasAttribute("data-dual-combobox-item")&&typeof i.value==="string"&&"value"in i&&"label"in i&&"selected"in i&&"disabled"in i&&"isFocused"in i&&"isHidden"in i}export{i};
-//# sourceMappingURL=p-Yt1TgLJF.js.map

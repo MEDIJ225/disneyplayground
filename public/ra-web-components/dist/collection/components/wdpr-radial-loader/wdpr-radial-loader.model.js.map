@@ -1,1 +1,0 @@
-{"version":3,"file":"wdpr-radial-loader.model.js","sourceRoot":"","sources":["../../../src/components/wdpr-radial-loader/wdpr-radial-loader.model.ts"],"names":[],"mappings":"","sourcesContent":["export type RadialLoaderSize = 'small' | 'medium' | 'large';\nexport type RadialLabelPlacement = 'inline' | 'stacked';\n"]}

@@ -1,1 +1,0 @@
-{"version":3,"file":"wdpr-text-field.model.js","sourceRoot":"","sources":["../../../src/components/wdpr-text-field/wdpr-text-field.model.ts"],"names":[],"mappings":"","sourcesContent":["export type TextFieldRequirementIndicator = 'required' | 'optional' | 'none';\nexport type TextFieldVariants = 'error' | 'noError';\nexport type TextFieldType = 'text' | 'number';\n"]}
