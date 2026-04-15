@@ -1,0 +1,198 @@
+{
+  "models": [
+    {
+      "id": "accordion",
+      "fields": [
+        { "component": "text", "name": "heading", "label": "Heading", "valueType": "string" },
+        { "component": "richtext", "name": "content", "label": "Content", "valueType": "string" }
+      ]
+    },
+    {
+      "id": "cards",
+      "fields": [
+        { "component": "reference", "name": "image", "label": "Image", "valueType": "string" },
+        { "component": "richtext", "name": "content", "label": "Content", "valueType": "string" }
+      ]
+    },
+    {
+      "id": "columns",
+      "fields": [
+        { "component": "richtext", "name": "columnLeft", "label": "Column Left", "valueType": "string" },
+        { "component": "richtext", "name": "columnRight", "label": "Column Right", "valueType": "string" }
+      ]
+    },
+    {
+      "id": "hero",
+      "fields": [
+        { "component": "reference", "name": "image", "label": "Background Image", "valueType": "string" },
+        { "component": "text", "name": "heading", "label": "Heading", "valueType": "string" },
+        { "component": "richtext", "name": "content", "label": "Content", "valueType": "string" }
+      ]
+    },
+    {
+      "id": "tabs",
+      "fields": [
+        { "component": "text", "name": "tabLabel", "label": "Tab Label", "valueType": "string" },
+        { "component": "richtext", "name": "content", "label": "Tab Content", "valueType": "string" }
+      ]
+    },
+    {
+      "id": "callout",
+      "fields": [
+        { "component": "richtext", "name": "content", "label": "Content", "valueType": "string" }
+      ]
+    },
+    {
+      "id": "carousel",
+      "fields": [
+        { "component": "reference", "name": "image", "label": "Slide Image", "valueType": "string" },
+        { "component": "richtext", "name": "content", "label": "Slide Content", "valueType": "string" }
+      ]
+    },
+    {
+      "id": "embed",
+      "fields": [
+        { "component": "text", "name": "url", "label": "Embed URL", "valueType": "string" }
+      ]
+    },
+    {
+      "id": "fragment",
+      "fields": [
+        { "component": "text", "name": "path", "label": "Fragment Path", "valueType": "string" }
+      ]
+    },
+    {
+      "id": "video",
+      "fields": [
+        { "component": "text", "name": "url", "label": "Video URL", "valueType": "string" }
+      ]
+    },
+    {
+      "id": "vista-button",
+      "fields": [
+        { "component": "text", "name": "label", "label": "Button Text / Link", "valueType": "string" },
+        {
+          "component": "select", "name": "variant", "label": "Variant", "valueType": "string",
+          "options": [
+            { "name": "Primary", "value": "primary" },
+            { "name": "Secondary", "value": "secondary" },
+            { "name": "Secondary Alt", "value": "secondary-alt" },
+            { "name": "Tertiary", "value": "tertiary" },
+            { "name": "Tertiary Alt", "value": "tertiary-alt" },
+            { "name": "Transactional", "value": "transactional" },
+            { "name": "Text", "value": "text" },
+            { "name": "Text No Padding", "value": "text-no-padding" }
+          ]
+        },
+        {
+          "component": "select", "name": "size", "label": "Size", "valueType": "string",
+          "options": [
+            { "name": "XSmall", "value": "xsmall" },
+            { "name": "Small", "value": "small" },
+            { "name": "Medium", "value": "medium" },
+            { "name": "Large", "value": "large" }
+          ]
+        },
+        {
+          "component": "select", "name": "display", "label": "Display", "valueType": "string",
+          "options": [
+            { "name": "Fit", "value": "fit" },
+            { "name": "Block", "value": "block" }
+          ]
+        },
+        { "component": "boolean", "name": "disabled", "label": "Disabled", "valueType": "boolean" },
+        { "component": "text", "name": "a11yLabel", "label": "Accessibility Label", "valueType": "string" },
+        {
+          "component": "select", "name": "type", "label": "Type", "valueType": "string",
+          "options": [
+            { "name": "Button", "value": "button" },
+            { "name": "Submit", "value": "submit" },
+            { "name": "Reset", "value": "reset" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "icon-list",
+      "fields": [
+        { "component": "reference", "name": "icon", "label": "Icon", "valueType": "string" },
+        { "component": "richtext", "name": "content", "label": "Content", "valueType": "string" }
+      ]
+    },
+    {
+      "id": "download-list",
+      "fields": [
+        { "component": "text", "name": "title", "label": "Title", "valueType": "string" },
+        { "component": "text", "name": "url", "label": "Download URL", "valueType": "string" }
+      ]
+    },
+    {
+      "id": "sticky-nav",
+      "fields": [
+        { "component": "richtext", "name": "content", "label": "Navigation Items", "valueType": "string" }
+      ]
+    },
+    {
+      "id": "modal",
+      "fields": [
+        { "component": "richtext", "name": "content", "label": "Modal Content", "valueType": "string" }
+      ]
+    },
+    {
+      "id": "multi-image",
+      "fields": [
+        { "component": "reference", "name": "imageLeft", "label": "Image Left", "valueType": "string" },
+        { "component": "reference", "name": "imageRight", "label": "Image Right", "valueType": "string" }
+      ]
+    },
+    {
+      "id": "promo-carousel",
+      "fields": [
+        { "component": "reference", "name": "image", "label": "Promo Image", "valueType": "string" },
+        { "component": "text", "name": "link", "label": "Link URL", "valueType": "string" }
+      ]
+    },
+    {
+      "id": "event-detail",
+      "fields": [
+        { "component": "reference", "name": "image", "label": "Event Image", "valueType": "string" },
+        { "component": "richtext", "name": "content", "label": "Event Details", "valueType": "string" }
+      ]
+    },
+    {
+      "id": "event-grid",
+      "fields": []
+    },
+    {
+      "id": "event-header",
+      "fields": [
+        { "component": "richtext", "name": "content", "label": "Header Content", "valueType": "string" }
+      ]
+    },
+    {
+      "id": "events-landing",
+      "fields": [
+        { "component": "richtext", "name": "content", "label": "Content", "valueType": "string" }
+      ]
+    },
+    {
+      "id": "blog-home",
+      "fields": []
+    },
+    {
+      "id": "blog-filter",
+      "fields": []
+    },
+    {
+      "id": "featured-blogs",
+      "fields": []
+    },
+    {
+      "id": "video-gallery",
+      "fields": [
+        { "component": "text", "name": "url", "label": "Video URL", "valueType": "string" },
+        { "component": "text", "name": "title", "label": "Video Title", "valueType": "string" }
+      ]
+    }
+  ]
+}

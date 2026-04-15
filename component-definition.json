@@ -1,0 +1,403 @@
+{
+  "groups": [
+    {
+      "title": "Content",
+      "id": "content",
+      "components": [
+        {
+          "title": "Accordion",
+          "id": "accordion",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block",
+                "template": {
+                  "name": "Accordion",
+                  "model": "accordion"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Cards",
+          "id": "cards",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block",
+                "template": {
+                  "name": "Cards",
+                  "model": "cards"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Columns",
+          "id": "columns",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block",
+                "template": {
+                  "name": "Columns",
+                  "model": "columns"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Hero",
+          "id": "hero",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block",
+                "template": {
+                  "name": "Hero",
+                  "model": "hero"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Tabs",
+          "id": "tabs",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block",
+                "template": {
+                  "name": "Tabs",
+                  "model": "tabs"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Callout",
+          "id": "callout",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block",
+                "template": {
+                  "name": "Callout",
+                  "model": "callout"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Carousel",
+          "id": "carousel",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block",
+                "template": {
+                  "name": "Carousel",
+                  "model": "carousel"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Embed",
+          "id": "embed",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block",
+                "template": {
+                  "name": "Embed",
+                  "model": "embed"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Fragment",
+          "id": "fragment",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block",
+                "template": {
+                  "name": "Fragment",
+                  "model": "fragment"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Video",
+          "id": "video",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block",
+                "template": {
+                  "name": "Video",
+                  "model": "video"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Vista Button",
+          "id": "vista-button",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block",
+                "template": {
+                  "name": "Vista Button",
+                  "model": "vista-button"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "title": "Layout",
+      "id": "layout",
+      "components": [
+        {
+          "title": "Icon List",
+          "id": "icon-list",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block",
+                "template": {
+                  "name": "Icon List",
+                  "model": "icon-list"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Download List",
+          "id": "download-list",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block",
+                "template": {
+                  "name": "Download List",
+                  "model": "download-list"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Sticky Nav",
+          "id": "sticky-nav",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block",
+                "template": {
+                  "name": "Sticky Nav",
+                  "model": "sticky-nav"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Modal",
+          "id": "modal",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block",
+                "template": {
+                  "name": "Modal",
+                  "model": "modal"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Multi Image",
+          "id": "multi-image",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block",
+                "template": {
+                  "name": "Multi Image",
+                  "model": "multi-image"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Promo Carousel",
+          "id": "promo-carousel",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block",
+                "template": {
+                  "name": "Promo Carousel",
+                  "model": "promo-carousel"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "title": "Events",
+      "id": "events",
+      "components": [
+        {
+          "title": "Event Detail",
+          "id": "event-detail",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block",
+                "template": {
+                  "name": "Event Detail",
+                  "model": "event-detail"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Event Grid",
+          "id": "event-grid",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block",
+                "template": {
+                  "name": "Event Grid",
+                  "model": "event-grid"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Event Header",
+          "id": "event-header",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block",
+                "template": {
+                  "name": "Event Header",
+                  "model": "event-header"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Events Landing",
+          "id": "events-landing",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block",
+                "template": {
+                  "name": "Events Landing",
+                  "model": "events-landing"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "title": "Blog",
+      "id": "blog",
+      "components": [
+        {
+          "title": "Blog Home",
+          "id": "blog-home",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block",
+                "template": {
+                  "name": "Blog Home",
+                  "model": "blog-home"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Blog Filter",
+          "id": "blog-filter",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block",
+                "template": {
+                  "name": "Blog Filter",
+                  "model": "blog-filter"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Featured Blogs",
+          "id": "featured-blogs",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block",
+                "template": {
+                  "name": "Featured Blogs",
+                  "model": "featured-blogs"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Video Gallery",
+          "id": "video-gallery",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block",
+                "template": {
+                  "name": "Video Gallery",
+                  "model": "video-gallery"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
