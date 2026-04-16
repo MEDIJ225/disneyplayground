@@ -73,6 +73,17 @@ async function switchTab(selectedButton, config, isInitial = false) {
   if (fragmentPath && contentContainer) {
     const delay = isInitial ? 0 : 50;
     setTimeout(() => loadAndSwapFragment(fragmentPath, contentContainer), delay);
+  } else if (contentContainer) {
+    // Show inline content from the second column
+    const inlineContent = selectedPanel.querySelector(':scope > div:nth-child(2)');
+    contentContainer.innerHTML = '';
+    if (inlineContent && inlineContent.innerHTML.trim()) {
+      const wrapper = document.createElement('div');
+      wrapper.className = 'section';
+      wrapper.style.display = 'block';
+      wrapper.innerHTML = inlineContent.innerHTML;
+      contentContainer.appendChild(wrapper);
+    }
   }
 
   updateNotchPosition(block, selectedButton);
